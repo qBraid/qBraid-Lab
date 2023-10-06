@@ -17,6 +17,7 @@ author = "qBraid Development Team"
 # ones.
 extensions = [
     "sphinx.ext.viewcode",  # Hide source code link
+    "sphinx.ext.intersphinx",
 ]
 
 # The master toctree document.
