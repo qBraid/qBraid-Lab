@@ -8,17 +8,17 @@ Web-based JupyterLab deployment providing curated software tools for for researc
 Install requirements
 
 ```shell
-pip install -r requirements.txt
+pip install -r docs/requirements.txt
 ```
 
 Build docs
 
 ```shell
-sphinx-build -W -b html . build/html
+sphinx-build -W -b html docs docs/build/html
 ```
 
 View html
 
 ```
-open build/html/index.html
+open docs/build/html/index.html
 ```
