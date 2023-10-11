@@ -37,12 +37,47 @@ exclude_patterns = [
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = "sphinx_rtd_theme"
+html_theme = "xanadu"
+html_theme_options = {
+    "navbar_logo_path": "_static/qbraid_Logofull.png",
+    "navbar_home_link": "https://qbraid.com",
+    "github_repo": "",
+    "navbar_left_links": [
+        {
+            "name": "DOCS",
+            "href": "https://docs.qbraid.com",
+        },
+        {
+            "name": "OUR PRODUCT",
+            "href": "https://www.qbraid.com/products",
+        },
+        {
+            "name": "CAREERS",
+            "href": "https://qbraid.applytojob.com/",
+        },
+        {
+            "name": "CONTACT",
+            "href": "https://www.qbraid.com/contact",
+        },
+    ],
+    "navbar_right_links": [
+        {
+            "name": "START NOW",
+            "href": "https://account.qbraid.com/",
+        },
+    ],
+    "footer_about": {},
+    "footer_links": [],
+    "footer_social_icons": [],
+    "footer_taglines": [],
+    "footer_policies": [],
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
+
 
 html_favicon = "_static/favicon.ico"
 html_show_sphinx = False
