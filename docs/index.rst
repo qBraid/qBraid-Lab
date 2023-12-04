@@ -105,7 +105,6 @@ Documentation
    lab/quantum_jobs
    lab/code_snippets
    lab/gpu
-   lab/julia
    lab/integrations
    lab/system
    lab/troubleshoot

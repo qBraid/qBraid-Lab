@@ -52,6 +52,8 @@ User Guide
 
 - `Kernels <kernels.html>`_
    - `Add/remove kernels <kernels.html#add-remove-kernels>`_
+   - `Julia <kernels.html#julia>`_
+   - `C++ <kernels.html#c++>`_
 
 - `Notebooks <notebooks.html>`_
    - `Create notebook <notebooks.html#create-notebook>`_
@@ -74,11 +76,6 @@ User Guide
    - `Launch GPU instance <gpu.html#launch-gpu-instance>`_
    - `Configuration <gpu.html#configuration>`_
    - `GPU-enabled environments <gpu.html#gpu-enabled-environments>`_
-
-- `Julia <julia.html>`_
-   - `Bloqade Lab Image <julia.html#bloqade-lab-image>`_
-   - `Julia Configuration <julia.html#configuration>`_
-   - `IJulia Troubleshooting <julia.html#troubleshooting>`_
 
 - `Integrations <integrations.html>`_
    - `Visual Studio Code <integrations.html#visual-studio-code>`_

@@ -14,7 +14,6 @@ enhanced computational capabilities. This high-performance Lab instance allows u
 to explore quantum machine learning applications with GPU-enabled quantum gradients, and more. For *exclusive early access*, join our
 `pre-launch waitlist <https://form.typeform.com/to/uRGyqJST?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx&typeform-source=docs>`_.
 
-
 Launch GPU instance
 --------------------
 
@@ -55,9 +54,9 @@ qBraid Lab GPUs instances are configured with the following specification:
 +------------------+-------------+
 | GPU Name         | Telsa V100  |
 +------------------+-------------+
-| CUDA             | 11.5        |
+| CUDA             | 12.0        |
 +------------------+-------------+
-| Driver           | 470.182.03  |
+| Driver           | 525.105.17  |
 +------------------+-------------+
 
 Further information can be retrieved using the `NVIDIA System Management Interface <https://developer.nvidia.com/nvidia-system-management-interface>`_
@@ -68,7 +67,7 @@ GPU-enabled environments
 --------------------------
 
 The GPU Lab image comes pre-configured with the `NVIDIA cuQuantum SDK <https://developer.nvidia.com/cuquantum-sdk>`_ GPU simulator library,
-and includes GPU integrations with other popular quantum softwares packages such as Pennylane-Lightning and Qiskit Aer.
+and includes GPU integrations with other popular quantum softwares packages such as Pennylane-Lightning, Qiskit Aer, and Qsim-Cirq.
 
 .. image:: ../_static/gpu/gpu_lab_launcher.png
     :width: 90%
@@ -76,6 +75,18 @@ and includes GPU integrations with other popular quantum softwares packages such
     :target: javascript:void(0);
 
 |
+
+.. raw:: html
+
+    <div class="responsive-video">
+        <iframe src="https://www.youtube.com/embed/bLxJXWD7ah4?si=fPV3zd8zgs5GwIjw" allowfullscreen></iframe>
+    </div>
+
+.. seealso::
+    
+    - `NVIDIA cuQuantum Cirq Appliance <https://docs.nvidia.com/cuda/cuquantum/latest/appliance/cirq.html>`_
+    - `Qsim optimized quantum circuit simulator <https://quantumai.google/qsim>`_
+    - `qBraid Lab Cirq GPU-accelerated VQE Demo <https://github.com/qBraid/qbraid-lab-demo/blob/main/qbraid_lab/gpu/cirq_VQE_cuQuantum.ipynb>`_
 
 
 Pennylane-Lighting
@@ -114,11 +125,6 @@ the device will fall-back to ``lightning.qubit`` and perform all simulation on t
 Qiskit Aer
 ^^^^^^^^^^^
 
-.. image:: ../_static/gpu/gpu_qiskit_aer.png
-    :align: right
-    :width: 350px
-    :target: javascript:void(0);
-
 Qiskit is an open-source framework for working with noisy quantum computers at the level of pulses, circuits, and algorithms.
 The `Qiskit Aer <https://github.com/Qiskit/qiskit-aer>`_ library provides high-performance quantum computing simulators with
 realistic noise models.
@@ -128,6 +134,11 @@ functionality of the canonical ``qiskit-aer`` package, plus the ability to run t
 density matrix, and unitary.
 
 Here is a basic example:
+
+.. image:: ../_static/gpu/gpu_qiskit_aer.png
+    :align: right
+    :width: 350px
+    :target: javascript:void(0);
 
 .. code-block:: python
 
