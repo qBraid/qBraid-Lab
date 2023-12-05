@@ -42,6 +42,11 @@ This environment path can also be found from the qBraid CLI via
 .. code-block:: bash
 
     $ qbraid envs list
+    # installed environments:
+    #
+    default                  jobs  /opt/.qbraid/environments/qbraid_000000
+    intel                          /opt/.qbraid/environments/intel_dk7c2g
+    ...
 
 
 Python Interface
@@ -57,7 +62,7 @@ The Python Interface provides users a way to run the Intel(R) Quantum SDK using 
 
     <h3 style="color:#D30982;">qBraid Instructions</h3> 
 
-The Python interface is installed in the Intel(R) Quantum SDK environment in qBraid. Before running this notebook, make sure that you have activated the Intel(R) Quantum SDK environment, and have selected the `Python [IQSDK]` kernel in the top-right of your menu bar. To run your Python scripts using the **iqsdk** library, you can use the qBraid CLI
+The Python interface is installed in the Intel(R) Quantum SDK environment in qBraid. Before running this notebook, make sure that you have activated the Intel(R) Quantum SDK environment, and have selected the ``Python [IQSDK]`` kernel in the top-right of your menu bar. To run your Python scripts using the **iqsdk** library, you can use the qBraid CLI
 
 .. code-block:: bash
 
@@ -78,101 +83,91 @@ You can use your choice of quantum programming package to write your program. As
 
 **Step 2:** Write your Python script
 
-First, we will construct a circuit using Qiskit, and convert it to a qasm string:
+First, we will construct a circuit using Qiskit, and convert it to an OpenQASM string:
 
 .. code-block:: python
 
-    import iqsdk
-    from openqasm_bridge.v2 import translate
-    from qiskit.circuit.random import random_circuit
+    from qiskit import QuantumCircuit
 
-    num_qubits = 2
-    depth = 2
+    # Create bell circuit with measurement over both qubits
+    circuit = QuantumCircuit(2, 2)
+    circuit.h(0)
+    circuit.cx(0, 1)
+    circuit.measure([0, 1], [0, 1])
 
-    circ = random_circuit(num_qubits, depth, measure=True)
+    input_qasm = circuit.qasm()
 
-    input_string = circ.qasm()
+We could have also read directly from a local ``.qasm`` file:
 
-    print(input_string)
+.. code-block:: python
+
+    with open("example.qasm", "r", encoding="utf-8") as input_file:
+        input_qasm: str = input_file.read()
 
 
-.. code-block::
+Either way, we now have an example OpenQASM string that looks as follows:
 
+.. code-block:: python
+
+    >>> print(input_qasm)
     OPENQASM 2.0;
     include "qelib1.inc";
     qreg q[2];
     creg c[2];
-    u2(5.203871548363386,2.3186480813640444) q[0];
-    ry(2.194897794397605) q[1];
-    u(0.8036803530101524,3.796981478934022,2.161748825203784) q[0];
-    sdg q[1];
+    h q[0];
+    cx q[0],q[1];
     measure q[0] -> c[0];
     measure q[1] -> c[1];
 
 
-Alternatively, we could have read directly from a local ``.qasm`` file:
+Next, we will use Bridge to translate the OpenQASM file to C++,
 
 .. code-block:: python
 
-    with open('example.qasm', 'r', encoding='utf8') as input_file:
-        input_string: str = input_file.read()
+    from openqasm_bridge.v2 import translate
 
-Next, we will use Bridge to translate the OpenQASM file to C++, and compile the
-translated C++ code using the qBraid Intel Quantum SDK environment compiler path:
+    kernel = circuit.name # assuming generated from qiskit
 
-.. code-block:: python
+    translated: list[str] = translate(input_qasm, kernel_name=kernel)
 
-    kernel = "my_kernel"
-
-    translated: list[str] = translate(input_string, kernel_name=kernel)
-
-    with open('example.cpp', 'w', encoding='utf8') as output_file:
+    with open("example.cpp", "w", encoding="utf-8") as output_file:
         for line in translated:
-            output_file.write(line + "\n")
+            print(line, file=output_file)
+
+
+and compile the translated C++ code using the qBraid Intel Quantum SDK environment compiler path:
+
+.. code-block:: python
+
+    import iqsdk
 
     compiler_path = "/opt/.qbraid/environments/intel_dk7c2g/intel-quantum-compiler"
+
     iqsdk.compileProgram(compiler_path, "example.cpp", "-s")
-
-.. code-block::
-
-    ===============================================================================
-                        Intel(R) Quantum SDK (V1.0)
-    ===============================================================================
-    Processing source file:
-    /home/jovyan/qbraid-tutorials/intel_tutorials/qbraid-python-example/example.cpp 
-    -------------------------------------------------------------------------------
-    Intermediate representation (IR) output file: 
-    /home/jovyan/qbraid-tutorials/intel_tutorials/qbraid-python-example/example.ll
-    -------------------------------------------------------------------------------
-    Transforming IR...
-    Validating and processing quantum kernels...
-    Optimizing using option 0...
-    Finalizing quantum IR...
-    -------------------------------------------------------------------------------
-    Generating quantum object file...
-    Compiling and linking to shared object...
-    Final shared object: 
-    /home/jovyan/qbraid-tutorials/intel_tutorials/qbraid-python-example/example.so
-    -------------------------------------------------------------------------------
+    # Generates output IR file example.ll and quantum object file example.so
 
 From here, we can start calling APIs to set up the simulator and run the quantum program. For example:
 
 .. code-block:: python
 
+    num_qubits = circuit.num_qubits # assuming generated from qiskit
+
     iqs_config = iqsdk.IqsConfig()
     iqs_config.num_qubits = num_qubits
     iqs_config.simulation_type = "noiseless"
+
     iqs_device = iqsdk.FullStateSimulator(iqs_config)
     iqs_device.ready()
+
     iqsdk.callCppFunction(kernel)
+
     qbit_ref = iqsdk.RefVec()
+
     for i in range(num_qubits):
         qbit_ref.append(iqsdk.QbitRef("q", i).get_ref())
+
     probabilities = iqs_device.getProbabilities(qbit_ref)
     iqsdk.FullStateSimulator.displayProbabilities(probabilities, qbit_ref)
-
-.. code-block::
-
-    Printing probability register of size 4
-    |00>    : 0                             |10>    : 1                             
-    |01>    : 0                             |11>    : 0
+    # Printing probability register of size 4
+    # |00>    : 0                             |10>    : 0
+    # |01>    : 0                             |11>    : 1
