@@ -104,3 +104,7 @@ In the bottom right corner qBraid Lab, click **Start Tour** for an interactive w
 links from the Help drop-down in the top menu bar. To stop and/or restart your session, click **File** > **Hub Control Panel** > **Stop My Server**.
 For more on the qBraid Lab interface, and managing your qBraid Lab session, see `Getting Started <getting_started.html>`_.
 
+
+.. seealso::
+
+    https://queracomputing.github.io/Bloqade.jl/dev/install/#Using-Bloqade-with-qBraid-Lab 
