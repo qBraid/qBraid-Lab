@@ -77,13 +77,21 @@ User Guide
    - `Configuration <gpu.html#configuration>`_
    - `GPU-enabled environments <gpu.html#gpu-enabled-environments>`_
 
+- `Omnisearch <omnisearch.html>`_
+   - `GitHub <omnisearch.html#omnisearch-github>`_
+   - `ChatGPT <omnisearch.html#omnisearch-chatgpt>`_
+
+- `Quantum Docs <quantum_docs.html>`_
+   - `Browse by company <quantum_docs.html#browse-by-company>`_
+   - `Company link page <quantum_docs.html#company-link-page>`_
+
+- `Jupyter Extensions <extensions.html>`_
+   - `Filebrowser <extensions.html#filebrowser>`_
+   - `Git <extensions.html#git>`_
+   - `Resource Usage <extensions.html#resource-usage>`_
+
 - `Integrations <integrations.html>`_
    - `Visual Studio Code <integrations.html#visual-studio-code>`_
-   - `JupyterLab Extensions <integrations.html#jupyerlab-extensions>`_
-   - `Git <integrations.html#git>`_
-   - `Resource Usage <integrations.html#resource-usage>`_
-   - `Quantum Docs <integrations.html#quantum-docs>`_
-   - `Omnisearch <integrations.html#omnisearch>`_
 
 - `System Info <system.html>`_
    - `Operating System <system.html#operating-system>`_
