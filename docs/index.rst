@@ -103,6 +103,7 @@ Documentation
    lab/notebooks
    lab/quantum_devices
    lab/quantum_jobs
+   lab/compute_manager
    lab/code_snippets
    lab/gpu
    lab/omnisearch

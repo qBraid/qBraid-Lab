@@ -20,6 +20,16 @@ renaming, downloading, copying, and sharing files and directories. To open the f
 The file system can be navigated by double-clicking on folders in the listing or clicking on the folders at the top of the directory listing.
 To open any file, double-click on its name, or drag the file into the main work area to create a new tab.
 
+Show hidden files
+^^^^^^^^^^^^^^^^^^
+
+From the top-bar menu, click on **View**, and then select **Show Hidden Files** to toggle the visibility of hidden files in the file browser.
+
+.. image:: ../_static/extensions/hidden_files.png
+    :width: 90%
+    :alt: Hidden fils
+    :target: javascript:void(0);
+
 
 Download files
 ^^^^^^^^^^^^^^^
