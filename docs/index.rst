@@ -67,7 +67,7 @@ Documentation
    </div>
    
    <div class="column">
-      <a href="https://docs.qbraid.com/projects/cli/en/latest/cli/qbraid.html">
+      <a href="https://docs.qbraid.com/projects/cli/en/latest/guide/overview.html">
          <div class="card">
             <h3>CLI</h3>
             <img src="_static/cards/terminal.png" alt="terminal" style="width:60px;height:60px;">
@@ -105,6 +105,9 @@ Documentation
    lab/quantum_jobs
    lab/code_snippets
    lab/gpu
+   lab/omnisearch
+   lab/quantum_docs
+   lab/extensions
    lab/integrations
    lab/system
    lab/troubleshoot
