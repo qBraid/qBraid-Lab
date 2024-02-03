@@ -6,6 +6,10 @@ Quantum Jobs
 qBraid Quantum Jobs give Lab users direct access to all `Amazon Braket supported devices <https://docs.aws.amazon.com/braket/latest/developerguide/braket-devices.html>`_
 with no additional access keys required. This includes access to QPU devices from IonQ, Oxford Quantum Circuits, QuEra, and Rigetti as well as on-demand simulators from AWS.
 
+.. note::
+    
+    Currently, qBraid Quantum Jobs only supports standard AWS Quantum Tasks. The application of qBraid credits towards Amazon Braket Hybrid Jobs is not yet available.
+
 Credits
 --------
 
@@ -18,14 +22,13 @@ in the ``QJOBS`` sidebar on Lab, or using the `CLI <../cli/jobs-get-credits.html
 
 .. code-block::
 
-    $ qbraid jobs get-credits
+    $ qbraid credits
 
 
 .. image:: ../_static/jobs/jobs_tag.png
     :align: right
     :width: 325px
     :target: javascript:void(0);
-
 
 Which environments?
 --------------------
