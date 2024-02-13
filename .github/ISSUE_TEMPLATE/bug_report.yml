@@ -35,15 +35,8 @@ body:
     id: bug-description
     attributes:
       label: Bug Description
-      description: "Please describe the bug you're experiencing."
+      description: "Please describe the bug you're experiencing. If possible, please attach one or more images that illustrate the issue. This could include screenshots, error messages, or other relevant visuals."
       placeholder: "Describe the bug in detail here."
     validations:
       required: true
-  - type: file
-    id: images
-    attributes:
-      label: Attach Images
-      description: "If possible, please attach one or more images that illustrate the issue. This could include screenshots, error messages, or other relevant visuals."
-      multiple: true
-    validations:
-      required: false
+
