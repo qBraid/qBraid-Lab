@@ -23,13 +23,11 @@ body:
         - Environment Manager
         - Quantum Jobs
         - Quantum Devices
+        - Compute Manager
         - Code Snippets
         - Omnisearch
         - Quantum Docs
-        - GPUs
         - qBraid-CLI
-        - qBraid-SDK
-        - Account
         - Other
     validations:
       required: true
