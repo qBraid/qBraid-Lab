@@ -1,5 +1,7 @@
 .. _lab_pricing:
 
+:orphan:
+
 Pricing
 ---------
 
