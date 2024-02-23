@@ -49,6 +49,7 @@ User Guide
    - `Install new package <environments.html#install-new-package>`_
    - `Activate environment (kernel) <environments.html#activate-environment-kernel>`_
    - `Command-line usage <environments.html#command-line-usage>`_
+   - `Featured environments <environments.html#featured-environments>`_
 
 - `Kernels <kernels.html>`_
    - `Add/remove kernels <kernels.html#add-remove-kernels>`_
@@ -104,6 +105,10 @@ User Guide
    - `NoRegionError <troubleshoot.html#noregionerror>`_
    - `Extension sidebar errors <troubleshoot.html#extension-sidebar-errors>`_
 
+- `Pricing <pricing.html>`_
+   - `Quantum Computers (on-demand) <pricing.html#quantum-computers->`_
+   - `Quantum Circuit Simulators <pricing.html#quantum-circuit-simulators>`_
+   - `CPUs + GPUs <pricing.html#cpus-gpus>`_
 
 .. seealso::
    

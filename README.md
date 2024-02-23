@@ -69,6 +69,7 @@ Once your image is pulled, you will be taken to the qBraid Lab interface. Here a
   - [Install new package](https://docs.qbraid.com/projects/lab/en/latest/lab/environments.html#install-new-package)
   - [Activate environment (kernel)](https://docs.qbraid.com/projects/lab/en/latest/lab/environments.html#activate-environment-kernel)
   - [Command-line usage](https://docs.qbraid.com/projects/lab/en/latest/lab/environments.html#command-line-usage)
+  - [Featured environments](https://docs.qbraid.com/projects/lab/en/latest/lab/environments.html#featured-environments)
 
 - [Kernels](https://docs.qbraid.com/projects/lab/en/latest/lab/kernels.html)
   - [Add/remove kernels](https://docs.qbraid.com/projects/lab/en/latest/lab/kernels.html#add-remove-kernels)
@@ -123,6 +124,11 @@ Once your image is pulled, you will be taken to the qBraid Lab interface. Here a
   - [ModuleNotFoundError](https://docs.qbraid.com/projects/lab/en/latest/lab/troubleshoot.html#modulenotfounderror)
   - [NoRegionError](https://docs.qbraid.com/projects/lab/en/latest/lab/troubleshoot.html#noregionerror)
   - [Extension sidebar errors](https://docs.qbraid.com/projects/lab/en/latest/lab/troubleshoot.html#extension-sidebar-errors)
+
+- [Pricing](https://docs.qbraid.com/projects/lab/en/latest/lab/pricing.html)
+  - [Quantum Computers](https://docs.qbraid.com/projects/lab/en/latest/lab/pricing.html#quantum-computers-on-demand)
+  - [Quantum Circuit Simulators](https://docs.qbraid.com/projects/lab/en/latest/lab/pricing.html#quantum-circuit-simulators)
+  - [CPUs + GPUs](https://docs.qbraid.com/projects/lab/en/latest/lab/pricing.html#cpus-gpus)
 
 ## Launch on qBraid
 

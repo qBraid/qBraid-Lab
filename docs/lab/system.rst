@@ -97,4 +97,4 @@ GPUs
 
 .. note::
     Support for the above-listed frameworks, libraries, and cross-platform tools may vary based on your qBraid subscription tier.
-    Visit `account.qbraid.com/billing <https://account.qbraid.com/billing>`_ to learn more.
+    See `pricing <pricing.html#cpus-gpus>`_ to learn more.
