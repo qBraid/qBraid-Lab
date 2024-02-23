@@ -112,3 +112,4 @@ Documentation
    lab/integrations
    lab/system
    lab/troubleshoot
+   lab/pricing

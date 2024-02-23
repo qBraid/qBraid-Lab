@@ -281,3 +281,12 @@ Python interpreter when invoking Python, e.g. ``/<path-to-venv>/bin/python``. Th
 new packages into a qBraid environment from terminal or inside a notebook, make sure to use the full pip path, or use one of the `three approaches
 detailed above <environments.html#install-new-package>`_. Simply running ``pip install ...`` will default to
 ``/opt/conda/bin/pip``, which will cause dependency conflicts, and the installed packages will be overridden the next time you launch lab.
+
+
+Featured environments
+-----------------------
+
+- `Pennylane Lighting GPU <gpu.html#pennylane-lighting>`_: Environment for developing with the Pennylane quantum machine learning library with support for GPU-accelerated circuit simulation.
+- `Qiskit Aer GPU <gpu.html#qiskit-aer>`_: Environment for developing with Qiskit Aer using GPU supported simulators: statevector, density matrix, and unitary.
+- `Bloqade <bloqade.html>`_: Environment and dedicated qBraid Lab instance for developing with Bloqade: an SDK for quantum computation and quantum dynamics based on neutral-atom architectures, developed by QuEra.
+- `Intel® Quantum SDK <intel.html>`_: Environment for developing with the Intel Quantum SDK, a C++ based API that allows users to write software targeted for Intel quantum hardware.

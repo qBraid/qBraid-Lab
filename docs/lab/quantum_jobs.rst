@@ -3,8 +3,8 @@
 Quantum Jobs
 =============
 
-qBraid Quantum Jobs give Lab users direct access to all `Amazon Braket supported devices <https://docs.aws.amazon.com/braket/latest/developerguide/braket-devices.html>`_
-with no additional access keys required. This includes access to QPU devices from IonQ, Oxford Quantum Circuits, QuEra, and Rigetti as well as on-demand simulators from AWS.
+qBraid Quantum Jobs give Lab users direct access to QPU devices from IonQ, Oxford Quantum Circuits, QuEra, and Rigetti,
+as well as on-demand simulators from AWS, all with no additional access keys required.
 
 .. note::
     
@@ -14,9 +14,9 @@ Credits
 --------
 
 Each time you run a program on a QPU or on-demand simulator using qBraid Quantum Jobs, credits are subtracted from your account according to the cost of the job.
-The cost is calculated using the per-shot / per-task / per-second fee(s) from `Amazon Braket pricing <https://aws.amazon.com/braket/pricing/>`_, with no mark-up.
+The cost is calculated using a per-shot and per-task rate for QPUs, and a per-minute rate for simulators. See `pricing <pricing.html>`_.
 
-Each qBraid credit is worth $.01 USD, so an Amazon Braket task costing $3.80 would subtract 380 credits from your qBraid balance. Credits can be `purchased <https://account.qbraid.com/billing.>`_
+Each qBraid credit is worth $.01 USD, so a quantum job costing $3.80 would subtract 380 credits from your qBraid balance. Credits can be `purchased <https://account.qbraid.com/billing.>`_
 from your account page, or `redeemed <account.html#add-access-key>`_ using an access key. You can check your current credit balance on your `account page <https://account.qbraid.com/billing.>`_,
 in the ``QJOBS`` sidebar on Lab, or using the `CLI <../cli/jobs-get-credits.html>`_:
 
@@ -126,8 +126,45 @@ At any time, it's now incredibly easy to retrieve the Job ID, recreate the ``Aws
     task.result()
     ...
 
+
+Submit and manage jobs via the qBraid-SDK
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 On qBraid, the devices you can access are not restricted by your choice of programming framework. Target any of our 20+ supported QPUs and simulators
-from Qiskit, Amazon Braket, Cirq, PyQuil, or OpenQASM 2 using the `qBraid SDK <https://docs.qbraid.com/en/latest/sdk/devices.html>`_.
+from Qiskit, Amazon Braket, Cirq, PyQuil, PyTKET, or OpenQASM using the `qBraid-SDK <https://docs.qbraid.com/en/latest/sdk/overview.html>`_.
+
+qBraid device wrappers can be used execute circuits on quantum backends. Using the OQC Lucy QPU as our example target backend, the procedure is as follows:
+
+.. code-block:: python
+
+    >>> from qbraid import device_wrapper
+    >>> qdevice = device_wrapper('aws_oqc_lucy')
+    >>> qjob = qdevice.run(circuit)
+    >>> qjob.status()
+    <JobStatus.QUEUED: 1>
+
+Once a quantum job is complete, use the result method to gather the result:
+
+.. code-block:: python
+
+    >>> qjob.wait_for_final_state()
+    >>> qjob.status()
+    <JobStatus.COMPLETED: 6>
+    >>> qresult = qjob.result()
+    >>> qresult.measurement_counts()
+    {'0': 136, '1': 864}
+
+Then, to retrieve the final cost of the quantum job:
+
+.. code-block:: python
+
+    >>> qjob.get_cost() # returns cost in USD
+    0.00375
+
+.. seealso::
+
+    - `qBraid-SDK Quantum Jobs <https://docs.qbraid.com/en/latest/sdk/jobs.html>`_
+    - `qBraid-SDK Providers <https://docs.qbraid.com/en/latest/api/qbraid.providers.html>`_
 
 Cancel/delete jobs
 --------------------

@@ -10,7 +10,7 @@ GPUs
     :target: javascript:void(0);
 
 The qBraid Lab GPU server provides access to an NVIDIA Tesla V100 GPU, and is tailored for researchers and developers requiring
-enhanced computational capabilities. This high-performance Lab instance allows users to leverage GPU accelerated circuit simulation,
+enhanced computational capabilities. This high-performance Lab instance allows users to leverage GPUs for accelerated circuit simulation,
 to explore quantum machine learning applications with GPU-enabled quantum gradients, and more. For *exclusive early access*, join our
 `pre-launch waitlist <https://form.typeform.com/to/uRGyqJST?utm_source=xxxxx&utm_medium=xxxxx&utm_campaign=xxxxx&utm_term=xxxxx&utm_content=xxxxx&typeform-source=docs>`_.
 
@@ -87,6 +87,7 @@ and includes GPU integrations with other popular quantum softwares packages such
     - `NVIDIA cuQuantum Cirq Appliance <https://docs.nvidia.com/cuda/cuquantum/latest/appliance/cirq.html>`_
     - `Qsim optimized quantum circuit simulator <https://quantumai.google/qsim>`_
     - `qBraid Lab Cirq GPU-accelerated VQE Demo <https://github.com/qBraid/qbraid-lab-demo/blob/main/qbraid_lab/gpu/cirq_VQE_cuQuantum.ipynb>`_
+    - `GPU pricing <pricing.html#cpus-gpus>`_
 
 
 Pennylane-Lighting
