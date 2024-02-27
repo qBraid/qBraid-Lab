@@ -17,7 +17,7 @@ algorithm results, often transforming quantum computer outputs from
 random to useful. For an in-depth explanation of Fire Opal's benefits
 and capabilities, check out the Fire Opal overview.
 
-This tutorial will run through the steps to set up Fire Opal and use
+This tutorial will run through the steps to set up Fire Opal on the qBraid Lab platform and use
 it to run a Bernstein-Vazirani circuit. After completion, you will
 have demonstrated Fire Opal's benefits by comparing the success
 probabilities of executing the circuit with both Fire Opal and
@@ -36,30 +36,55 @@ Qiskit.
    account <https://q-ctrl.com/fire-opal>`__ to run the Fire Opal
    package.
 
-   .. rubric:: 2. Install Fire Opal Python package
-      :name: 2-install-fire-opal-python-package
+   .. rubric:: 2. Install the Fire Opal Environment in qBraid Lab
+      :name: 2-install-fire-opal
 
-   Refer to `how to set up your environment and install Fire
-   Opal <https://docs.q-ctrl.com/fire-opal/user-guides/how-to-set-up-your-environment-and-install-fire-opal>`__
-   for more detailed information on how to set up your development
-   environment to run Fire Opal. If you already have Python and a
-   package manager installed, you can use the following command to
-   install the necessary packages:
+   \1. In the Environment Manager sidebar, click **Add** to view the environments available to install.
 
-   .. code:: shell
+   \2. Choose the Fire Opal environment, expand its pannel, and click **Install**.
 
-      pip install fire-opal qiskit matplotlib qiskit-ibm-runtime
+   .. image:: ../_static/environments/env_install_fire_opal.png
+      :width: 90%
+      :alt: Install environment
+      :target: javascript:void(0);
+   
+   |
 
-.. container:: cell code
-   :name: e69b7bc9
+   \3. Once the installation has started, the pannel is moved to the **My Environments** tab.
+   Click **Browse Environments** to return to the **My Environments** tab and view its progress.
 
-   .. code:: python
+   .. image:: ../_static/environments/env_installing_fire_opal.png
+      :width: 90%
+      :alt: Installing environment progress bar
+      :target: javascript:void(0);
+   
+   |
 
-      import fireopal
-      import qiskit
-      from qiskit_ibm_runtime import QiskitRuntimeService
-      import matplotlib.pyplot as plt
-      import os
+   \4. When the installation is complete, the environment panel's action button will switch from
+   **Installing...** to **Add Kernel**. Click Add Kernel and open a new notebook to beginning coding with the Fire Opal environment.
+
+   .. image:: ../_static/environments/env_activated_fire_opal.png
+      :width: 90%
+      :alt: Installing environment progress bar
+      :target: javascript:void(0);
+   
+   |
+
+   \5. Verify that the Fire Opal environment is installed by running the following code in the new notebook.
+
+   .. container:: cell code
+      :name: e69b7bc9
+
+      .. code:: python
+
+         import fireopal
+         import qiskit
+         from qiskit_ibm_runtime import QiskitRuntimeService
+         import matplotlib.pyplot as plt
+         import os
+   
+   \6. You are now ready to use Fire Opal in the qBraid Lab environment! Proceed with the tutorial below to run a Bernstein-Vazirani circuit.
+
 
 .. container:: cell markdown
    :name: ac41bad3
