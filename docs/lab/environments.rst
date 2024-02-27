@@ -290,4 +290,3 @@ Featured environments
 - `Qiskit Aer GPU <gpu.html#qiskit-aer>`_: Environment for developing with Qiskit Aer using GPU supported simulators: statevector, density matrix, and unitary.
 - `Bloqade <bloqade.html>`_: Environment and dedicated qBraid Lab instance for developing with Bloqade: an SDK for quantum computation and quantum dynamics based on neutral-atom architectures, developed by QuEra.
 - `Intel® Quantum SDK <intel.html>`_: Environment for developing with the Intel Quantum SDK, a C++ based API that allows users to write software targeted for Intel quantum hardware.
-
