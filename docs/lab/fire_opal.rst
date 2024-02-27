@@ -14,7 +14,7 @@ Overview
     :alt: Fire Opal
     :target: javascript:void(0);
 
-Fire Opal is a software package that makes it simple for anyone to achieve meaningful results from quantum computers. Using AI-driven error suppression, Fire Opal improves the success of algorithms by thousands of times and enables you to successfully scale to large problem sizes, without even having to worry about the details of quantum circuits. At the same time, reaching the correct answer takes fewer shots and requires no overhead, meaning that you save on compute cost. For an in-depth explanation of Fire Opal’s benefits and capabilities, check out the Fire Opal overview.
+`Fire Opal <https://q-ctrl.com/fire-opal>`_ is a software package that makes it simple for anyone to achieve meaningful results from quantum computers. Using AI-driven error suppression, Fire Opal improves the success of algorithms by thousands of times and enables you to successfully scale to large problem sizes, without even having to worry about the details of quantum circuits. At the same time, reaching the correct answer takes fewer shots and requires no overhead, meaning that you save on compute cost. For an in-depth explanation of Fire Opal’s benefits and capabilities, check out the Fire Opal overview.
 
 This tutorial will run through the steps to set up Fire Opal on the qBraid Lab platform and use
 it to run a Bernstein-Vazirani circuit. After completion, you will
