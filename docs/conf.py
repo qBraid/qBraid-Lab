@@ -30,8 +30,7 @@ exclude_patterns = [
     "_build",
     "*.pytest_cache",
     "*.ipynb_checkpoints",
-    "*tests",
-    "*lab/fire_opal.rst"
+    "*tests"
 ]
 
 # -- Options for HTML output -------------------------------------------------
