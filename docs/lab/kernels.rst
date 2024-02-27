@@ -8,7 +8,7 @@ Add/remove kernel
 
 The IPython kernel is the Python execution backend for Jupyter.
 
-Under **My Environments**, choose the environment, and expand its pannel.
+Under **My Environments**, choose the environment, and expand its panel.
 Click **Activate** to activate the environment and create an associated ipykernel.
 
 .. image:: ../_static/notebooks/kernel_activate.png

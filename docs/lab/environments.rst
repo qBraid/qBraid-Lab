@@ -71,7 +71,7 @@ Install environment
 
 \1. In the Environment Manager sidebar, click **Add** to view the environments available to install.
 
-\2. Choose an environment, expand its pannel, and click **Install**.
+\2. Choose an environment, expand its panel, and click **Install**.
 
 .. image:: ../_static/environments/env_install.png
     :width: 90%
@@ -80,7 +80,7 @@ Install environment
   
 |
 
-\3. Once the installation has started, the pannel is moved to the **My Environments** tab.
+\3. Once the installation has started, the panel is moved to the **My Environments** tab.
 Click **Browse Environments** to return to the **My Environments** tab and view its progress.
 
 .. image:: ../_static/environments/env_installing.png
