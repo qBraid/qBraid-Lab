@@ -1,6 +1,6 @@
 :orphan:
 
-.. _lab_w:
+.. _lab_fire_opal:
 
 Fire Opal
 ==========
@@ -8,7 +8,7 @@ Fire Opal
 Overview
 ---------
 
-.. image:: ../_static/environments/env_fire_opal_qbraid.png
+.. image:: ../_static/environments/fire_opal/fire_opal_panel.png
     :align: right
     :width: 300px
     :alt: Fire Opal
@@ -22,7 +22,7 @@ have demonstrated Fire Opal's benefits by comparing the success
 probabilities of executing the circuit with both Fire Opal and
 Qiskit.
 
-Click below to clone the qbraid-lab-demo repository into your qBraid Lab, and then open `qbraid_lab/fire_opal/get-started.ipynb <https://github.com/qBraid/qbraid-lab-demo/blob/main/qbraid_lab/fire_opal/get-started.ipynb>`_. to follow along with this tutorial / demo.
+Click below to clone the `qbraid-lab-demo <https://github.com/qBraid/qbraid-lab-demo>`_ repository into your qBraid Lab, and then open ``qbraid_lab`` \> ``fire_opal`` \> ``get-started.ipynb`` to follow along with the code examples in this tutorial.
 
 .. image:: https://qbraid-static.s3.amazonaws.com/logos/Launch_on_qBraid_white.png
    :align: left
@@ -51,7 +51,7 @@ package.
 
 **2b.** Choose the Fire Opal environment, expand its panel, and click **Install**.
 
-.. image:: ../_static/environments/env_install_fire_opal.png
+.. image:: ../_static/environments/fire_opal/fire_opal_install.png
    :width: 90%
    :alt: Install environment
    :target: javascript:void(0);
@@ -61,7 +61,7 @@ package.
 **2c.** Once the installation has started, the panel is moved to the **My Environments** tab.
 Click **Browse Environments** to return to the **My Environments** tab and view its progress.
 
-.. image:: ../_static/environments/env_installing_fire_opal.png
+.. image:: ../_static/environments/fire_opal/fire_opal_installing.png
    :width: 90%
    :alt: Installing environment progress bar
    :target: javascript:void(0);
@@ -69,16 +69,20 @@ Click **Browse Environments** to return to the **My Environments** tab and view 
 |
 
 **2d.** When the installation is complete, the environment panel's action button will switch from
-**Installing...** to **Add Kernel**. Click Add Kernel and open a new notebook to beginning coding with the Fire Opal environment.
+**Installing...** to **Add Kernel**. Click **Add Kernel** and open a new notebook to beginning coding with the Fire Opal environment.
+You can also click the **Quantum Docs** icon to browse the `integrated Fire Opal documentation <fire_opal.html#id2>`_.
 
-.. image:: ../_static/environments/env_activated_fire_opal.png
+.. _launcher:
+
+.. image:: ../_static/environments/fire_opal/fire_opal_activated.png
    :width: 90%
    :alt: Installing environment progress bar
    :target: javascript:void(0);
 
 |
 
-**2e.** In the new notebook, make sure that your ipykernel (top-right) is set to ``Python 3 [FireOpal]``, see `Switch notebook kernel <notebooks.html#switch-notebook-kernel>`__ Then, verify that the Fire Opal environment is configured correctly by running the following code in the first cell:
+**2e.** In the new notebook, make sure that your ipykernel (top-right) is set to ``Python 3 [FireOpal]`` (see `switch notebook kernel <notebooks.html#switch-notebook-kernel>`__).
+Then, verify that the Fire Opal environment is configured correctly by running the following code in the first cell:
 
 
 .. code:: python
@@ -89,7 +93,18 @@ Click **Browse Environments** to return to the **My Environments** tab and view 
    import matplotlib.pyplot as plt
    import os
 
-**2f.** You are now ready to use Fire Opal in the qBraid Lab environment! Proceed with the tutorial below to run a Bernstein-Vazirani circuit.
+
+When you have the Fire Opal kernel selected, clicking the docs link in the notebook top-bar will take you directly to the Fire Opal documentation page in a new tab.
+
+.. image:: ../_static/environments/fire_opal/fire_opal_notebook.png
+   :width: 90%
+   :alt: Fire Opal notebook
+   :target: javascript:void(0);
+
+|
+
+**2f.** You are now ready to use Fire Opal in the qBraid Lab environment! Finish setup by configuring your Q-CTRL organization and IBM Cloud credentials,
+and then follow the tutorial below to run a Bernstein-Vazirani circuit.
 
 
 \3. Specify your Q-CTRL organization
@@ -428,7 +443,7 @@ Opal greatly improved the success probability.
          bitstring_results[0], hidden_string="11111111111", title=f"Fire Opal ($n=11$)"
    )    
 
-.. image:: ../_static/environments/env_fire_opal_0.png
+.. image:: ../_static/environments/fire_opal/fire_opal_plot_0.png
 
 
 \7. Compare Fire Opal Results with Qiskit
@@ -465,7 +480,7 @@ used previously to get a one-to-one comparison.
    )  
 
 
-.. image:: ../_static/environments/env_fire_opal_1.png
+.. image:: ../_static/environments/fire_opal/fire_opal_plot_1.png
 
 The above results demonstrate that noise has severely impacted the
 probability of obtaining the correct hidden string as the output. In
@@ -502,3 +517,28 @@ answer.
 .. seealso::
 
    - `Fire Opal Documentation <https://docs.q-ctrl.com/fire-opal>`_
+   - `qBraid-Lab-Demo GitHub: Fire Opal notebooks <https://github.com/qBraid/qbraid-lab-demo/tree/main/qbraid_lab/fire_opal>`_
+
+
+Integrated Fire Opal Documentation 
+-------------------------------------
+
+From `launcher`_, click the **Quantum Docs** icon under "Other" to open the `qBraid Quantum Docs extension <quantum_docs.html>`_.
+In this extension contains links to software documentation across quantum computing ecosystem, including a dedicated page for Q-CTRL:
+
+
+.. image:: ../_static/environments/fire_opal/qctrl_docs.png
+   :width: 90%
+   :alt: Q-CTRL Documentation
+   :target: javascript:void(0);
+
+|
+
+Within the Q-CTRL page, you can directly access more Fire Opal documentation, and use the ``+`` button to add your own custom Q-CTRL and Fire Opal documentation links:
+
+.. image:: ../_static/environments/fire_opal/qctrl_docs_links.png
+   :width: 90%
+   :alt: Q-CTRL Documentation Links
+   :target: javascript:void(0);
+
+|
