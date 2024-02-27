@@ -4,8 +4,12 @@ Troubleshooting
 ================
 
 If you encounter an error that isn't included on this page or if the solution provided doesn't work, please
-`reach out to us on Discord <https://discord.gg/gwBebaBZZX>`_, email us at request@qbraid.com, or
-`open a bug report <https://github.com/qbraid/community/issues/new?assignees=&labels=bug&template=bug_report.md>`_.
+`reach out to us on Discord <https://discord.gg/KugF6Cnncm>`_, email us at contact@qbraid.com, or
+`open a bug report <https://github.com/qBraid/qBraid-Lab/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml&title=%5BBUG%5D+>`_.
+
+.. image:: https://img.shields.io/badge/issue_tracking-github-blue?logo=github
+   :width: 150px
+   :target: https://github.com/qBraid/qBraid-Lab/issues
 
 Error launching Lab
 ---------------------
