@@ -51,7 +51,7 @@ package.
 
 **2a.** In the Environment Manager sidebar, click **Add** to view the environments available to install.
 
-**2b.** Choose the Fire Opal environment, expand its pannel, and click **Install**.
+**2b.** Choose the Fire Opal environment, expand its panel, and click **Install**.
 
 .. image:: ../_static/environments/env_install_fire_opal.png
    :width: 90%
@@ -60,7 +60,7 @@ package.
 
 |
 
-**2c.** Once the installation has started, the pannel is moved to the **My Environments** tab.
+**2c.** Once the installation has started, the panel is moved to the **My Environments** tab.
 Click **Browse Environments** to return to the **My Environments** tab and view its progress.
 
 .. image:: ../_static/environments/env_installing_fire_opal.png
