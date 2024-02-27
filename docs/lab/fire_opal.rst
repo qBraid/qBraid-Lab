@@ -98,8 +98,7 @@ Qiskit.
    account <https://docs.quantum-computing.ibm.com/run/account-management>`__,
    which you can use to access devices on the Open or Premium IBM
    Quantum plans. Simply input your hub, group, project, and access
-   token to the
-   ```make_credentials_for_ibmq`` <https://docs.q-ctrl.com/references/fire-opal/fireopal/fireopal.credentials.make_credentials_for_ibmq.html>`__
+   token to the `make_credentials_for_ibmq <https://docs.q-ctrl.com/references/fire-opal/fireopal/fireopal.credentials.make_credentials_for_ibmq.html>`__
    function.
 
    Alternatively, you can `authenticate with IBM
