@@ -504,3 +504,4 @@ answer.
 .. seealso::
 
    - `Fire Opal Documentation <https://docs.q-ctrl.com/fire-opal>`_
+   - `qBraid-Lab-Demo GitHub: Fire Opal notebooks <https://github.com/qBraid/qbraid-lab-demo/tree/main/qbraid_lab/fire_opal>`_
