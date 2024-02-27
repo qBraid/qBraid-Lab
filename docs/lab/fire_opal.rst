@@ -14,9 +14,9 @@ Overview
     :alt: Fire Opal
     :target: javascript:void(0);
 
-Fire Opal is a Python package that applies a complete suite of error
-suppression techniques to vastly improve the quality of quantum
-algorithm results, often transforming quantum computer outputs from
+`Fire Opal <https://q-ctrl.com/fire-opal>`_ is a Python package offered by Q-CTRL
+that applies a complete suite of error suppression techniques to vastly improve the
+quality of quantum algorithm results, often transforming quantum computer outputs from
 random to useful. For an in-depth explanation of Fire Opal's benefits
 and capabilities, check out the Fire Opal overview.
 
@@ -80,7 +80,7 @@ Click **Browse Environments** to return to the **My Environments** tab and view 
 
 |
 
-**2e.** Verify that the Fire Opal environment is installed by running the following code in the new notebook.
+**2e.** In the new notebook, make sure that your ipykernel (top-right) is set to ``Python 3 [FireOpal]``, see `Switch notebook kernel <notebooks.html#switch-notebook-kernel>`_. Then, verify that the Fire Opal environment is configured correctly by running the following code in the first cell:
 
 
 .. code:: python
@@ -129,10 +129,12 @@ Cloud <https://docs.q-ctrl.com/references/fire-opal/fireopal/fireopal.credential
 Visit the documentation for more information on how to `get
 started <https://cloud.ibm.com/docs/quantum-computing?topic=quantum-computing-get-started>`__.
 
-**Note:** IBM Quantum offers public access to some of their quantum
-computers. However, queue times for public systems can be long, which
-will cause delays in the execution steps of this guide (steps 5 and
-7). These delays are extraneous to Fire Opal.
+.. note:: 
+   
+   IBM Quantum offers public access to some of their quantum
+   computers. However, queue times for public systems can be long, which
+   will cause delays in the execution steps of this guide (demo steps 5 and
+   7). These delays are extraneous to Fire Opal.
 
 Demo: Running the Bernstein-Vazirani algorithm with Fire Opal
 ---------------------------------------------------------------
