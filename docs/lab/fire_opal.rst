@@ -22,6 +22,16 @@ have demonstrated Fire Opal's benefits by comparing the success
 probabilities of executing the circuit with both Fire Opal and
 Qiskit.
 
+Click below to clone the qbraid-lab-demo repository into your qBraid Lab, and then open `qbraid_lab/fire_opal/get-started.ipynb <https://github.com/qBraid/qbraid-lab-demo/blob/main/qbraid_lab/fire_opal/get-started.ipynb>`_. to follow along with this tutorial / demo.
+
+.. image:: https://qbraid-static.s3.amazonaws.com/logos/Launch_on_qBraid_white.png
+   :align: left
+   :width: 150px
+   :alt: Launch on qBraid Lab
+   :target: https://account.qbraid.com?gitHubUrl=https://github.com/qBraid/qbraid-lab-demo.git
+
+|
+
 |
 
 Setup
@@ -68,7 +78,7 @@ Click **Browse Environments** to return to the **My Environments** tab and view 
 
 |
 
-**2e.** In the new notebook, make sure that your ipykernel (top-right) is set to ``Python 3 [FireOpal]``, see `Switch notebook kernel <notebooks.html#switch-notebook-kernel>`_. Then, verify that the Fire Opal environment is configured correctly by running the following code in the first cell:
+**2e.** In the new notebook, make sure that your ipykernel (top-right) is set to ``Python 3 [FireOpal]``, see `Switch notebook kernel <notebooks.html#switch-notebook-kernel>`__ Then, verify that the Fire Opal environment is configured correctly by running the following code in the first cell:
 
 
 .. code:: python
