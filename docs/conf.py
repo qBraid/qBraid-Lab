@@ -30,7 +30,7 @@ exclude_patterns = [
     "_build",
     "*.pytest_cache",
     "*.ipynb_checkpoints",
-    "*tests"
+    "*tests",
 ]
 
 # -- Options for HTML output -------------------------------------------------
