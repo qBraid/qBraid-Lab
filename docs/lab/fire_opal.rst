@@ -1,6 +1,6 @@
 :orphan:
 
-.. _lab_fire_opal:
+.. _lab_w:
 
 Fire Opal
 ==========
@@ -14,17 +14,15 @@ Overview
     :alt: Fire Opal
     :target: javascript:void(0);
 
-`Fire Opal <https://q-ctrl.com/fire-opal>`_ is a Python package offered by Q-CTRL
-that applies a complete suite of error suppression techniques to vastly improve the
-quality of quantum algorithm results, often transforming quantum computer outputs from
-random to useful. For an in-depth explanation of Fire Opal's benefits
-and capabilities, check out the Fire Opal overview.
+`Fire Opal <https://q-ctrl.com/fire-opal>`_ is a software package that makes it simple for anyone to achieve meaningful results from quantum computers. Using AI-driven error suppression, Fire Opal improves the success of algorithms by thousands of times and enables you to successfully scale to large problem sizes, without even having to worry about the details of quantum circuits. At the same time, reaching the correct answer takes fewer shots and requires no overhead, meaning that you save on compute cost. For an in-depth explanation of Fire Opal’s benefits and capabilities, check out the Fire Opal overview.
 
 This tutorial will run through the steps to set up Fire Opal on the qBraid Lab platform and use
 it to run a Bernstein-Vazirani circuit. After completion, you will
 have demonstrated Fire Opal's benefits by comparing the success
 probabilities of executing the circuit with both Fire Opal and
 Qiskit.
+
+Click below to clone the qbraid-lab-demo repository into your qBraid Lab, and then open `qbraid_lab/fire_opal/get-started.ipynb <https://github.com/qBraid/qbraid-lab-demo/blob/main/qbraid_lab/fire_opal/get-started.ipynb>`_. to follow along with this tutorial / demo.
 
 .. image:: https://qbraid-static.s3.amazonaws.com/logos/Launch_on_qBraid_white.png
    :align: left
@@ -80,7 +78,7 @@ Click **Browse Environments** to return to the **My Environments** tab and view 
 
 |
 
-**2e.** In the new notebook, make sure that your ipykernel (top-right) is set to ``Python 3 [FireOpal]``, see `Switch notebook kernel <notebooks.html#switch-notebook-kernel>`_. Then, verify that the Fire Opal environment is configured correctly by running the following code in the first cell:
+**2e.** In the new notebook, make sure that your ipykernel (top-right) is set to ``Python 3 [FireOpal]``, see `Switch notebook kernel <notebooks.html#switch-notebook-kernel>`__ Then, verify that the Fire Opal environment is configured correctly by running the following code in the first cell:
 
 
 .. code:: python
@@ -386,7 +384,7 @@ real device.
 .. note::
 
    Once jobs are submitted, there may be a delay in returning
-   results due to the hardware provider's queue. You can** `view and
+   results due to the hardware provider's queue. You can `view and
    retrieve results
    later <https://docs.q-ctrl.com/fire-opal/user-guides/how-to-view-previous-jobs-and-retrieve-results>`__.
    Be sure to let your jobs finish executing, and do not cancel the
