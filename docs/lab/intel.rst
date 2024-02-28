@@ -9,13 +9,88 @@ Intel Quantum SDK is a C++ based API that allows users to write software
 targeted for Intel quantum hardware. It is available as a pre-installed
 environment on qBraid Lab, and is free to access for all users:
 
-.. image:: ../_static/cpp/update_me_PLEASE.png
+.. image:: ../_static/cpp/UPDATE_ME_PLEASE.png
     :align: center
     :width: 90%
-    :alt: Intel Quantum SDK
+    :alt: Intel® Quantum SDK
     :target: javascript:void(0);
 
 |
+
+The Intel Quantum SDK is a C++ software engineering advance that provides
+quantum computing integration with established professional software projects
+operating at scale. The Intel Quantum SDK is natively designed to interoperate
+with the Python software environment. The most straightforward approach to using the
+Intel Quantum SDK is to provide a quantum kernel as C++ source in your Python
+environment and expose that kernel for operation as a shared object.
+
+Your first C++ Quantum Kernel
+-----------------------------
+
+We will create and manipulate a quantum kernal running on the
+Intel Quantum Simulator directly in your notebook. This first kernel will demonstrate
+a simple quantum Bell state as a common and familiar quantum computing system.
+
+.. code-block:: python
+
+    import intelqsdk.cbindings as iqsdk
+
+    iqc = "/opt/.qbraid/environments/intel_dk7c2g/intel-quantum-compiler"
+
+    num_qubits = 2
+
+    # Create the Python parameterized 2 qubit C++ Bell state source
+    Bell_source = f"""
+    #include <clang/Quantum/quintrinsics.h>
+
+    // Establish the classical and quantum kernel variables
+    cbit c[{num_qubits}];
+    qbit q[{num_qubits}];
+
+    // Our Bell state Quantum Kernel
+    quantum_kernel void bell()
+    {
+        H(q[0]);
+        CNOT(q[0], q[1]);
+        MeasZ(q[0], c[0]);
+        MeasZ(q[1], c[1]);
+    }
+    """
+
+    # Create the Intel Quantum SDK source file bell.cpp
+    with open("bell.cpp", "w", encoding="utf-8") as output_file:
+        for line in Bell_source:
+            print(line, file=output_file)
+
+    # Generate the Intel Quantum SDK shared object file bell.so
+    iqsdk.compileProgram(iqc, "bell.cpp", "-s")
+
+    # Expose and label the Intel Quantum SDK shared object as "my_bell"
+    iqsdk.loadSdk("bell.so", "my_bell")
+
+    # Setup the Intel Quantum Simulator to execute the quantum kernel
+    iqs_config = iqsdk.IqsConfig()
+    iqs_config.num_qubits = num_qubits
+    iqs_config.simulation_type = "noiseless"
+    iqs_device = iqsdk.FullStateSimulator(iqs_config)
+    iqs_device.ready()
+
+    # Invoke the quantum_kernel "bell" defined in the C++ source above
+    iqsdk.callCppFunction("bell", "my_bell")
+
+    # Establish references to the quntum kernel qubits
+    qbit_ref = iqsdk.RefVec()
+    for i in range(num_qubits):
+        qbit_ref.append( iqsdk.QbitRef("q", i, "my_bell").get_ref() )
+
+    # Print the probabilities of the quantum system
+    probabilities = iqs_device.getProbabilities(qbit_ref)
+    iqsdk.FullStateSimulator.displayProbabilities(probabilities, qbit_ref)
+
+    # Printing probability register of size 4
+    # |00>    : 0                             |10>    : 0
+    # |01>    : 0                             |11>    : 1
+
 
 OpenQASM Support
 ------------------
@@ -36,7 +111,7 @@ format.
 
 .. raw:: html
 
-    <h3 style="color:#D30982;">qBraid Instructions</h3> 
+    <h3 style="color:#D30982;">qBraid Instructions</h3>
 
 On qBraid, the compiler is located in the Intel environment directory.
 
@@ -81,7 +156,7 @@ interacting with Python:
 
 .. raw:: html
 
-    <h3 style="color:#D30982;">qBraid Instructions</h3> 
+    <h3 style="color:#D30982;">qBraid Instructions</h3>
 
 The Python interface is installed in the Intel® Quantum SDK environment
 in qBraid. Before running this notebook, make sure that you have activated
