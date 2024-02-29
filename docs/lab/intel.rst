@@ -97,8 +97,7 @@ a common and familiar quantum computing example.
 
     # Create the Intel® Quantum SDK source file bell.cpp
     with open("bell.cpp", "w", encoding="utf-8") as output_file:
-        for line in Bell_source:
-            print(line, file=output_file)
+        print(Bell_source, file=output_file)
 
     # Generate the Intel® Quantum SDK shared object file bell.so
     iqsdk.compileProgram(compiler, "bell.cpp", "-s")
@@ -197,8 +196,7 @@ two sections there identified by comments starting with "Create " and re-run;
 
     # Create the OpenQASM 2.0 source file bell.qasm
     with open("bell.qasm", "w", encoding="utf-8") as output_file:
-        for line in Bell_source:
-            print(line, file=output_file)
+        print(Bell_source, file=output_file)
 
     # Create the Intel® Quantum SDK source file bell.cpp
     iqsdk.compileProgram(compiler, "bell.qasm", "-B")
