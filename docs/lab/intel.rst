@@ -5,7 +5,7 @@
 Intel® Quantum SDK
 ====================
 
-Intel Quantum SDK is a C++ based API that allows users to write software
+Intel® Quantum SDK is a C++ based API that allows users to write software
 targeted for Intel quantum hardware. It is available as a pre-installed
 environment on qBraid Lab, and is free to access for all users:
 
@@ -25,7 +25,6 @@ Guerreschi, G. G., Zou, X. & Matsuura, A. Y.,
 
 The Intel® Quantum SDK is designed to interoperate with Python software
 environments and we will use that feature in your first notebook.
-
 
 Python Interface
 ------------------
@@ -48,8 +47,8 @@ for interacting with Python is via the Intel® Quantum Compiler OpenQASM Bridge:
 
 The Python interface is installed in the Intel® Quantum SDK environment
 in qBraid. Before running this notebook, make sure that you have activated
-the Intel® Quantum SDK environment, and have selected the ``Python
-[IQSDK]`` kernel in the top-right of your menu bar. To run your Python
+the Intel® Quantum SDK environment, and have selected the ``Python [IQSDK]``
+kernel in the top-right of your menu bar. To run your Python
 scripts using the **intelqsdk.cbindings** library, you can use the qBraid CLI
 
 .. code-block:: bash
@@ -61,7 +60,6 @@ or call your script with the full python3 path at
 .. code-block:: bash
 
     $ /opt/.qbraid/environments/intel_dk7c2g/virtualenv/bin/python3
-
 
 
 Your First C++ Quantum Kernel
@@ -79,7 +77,7 @@ a common and familiar quantum computing example.
 
     num_qubits = 2
 
-    # Create the Python parameterized 2 qubit C++ Bell state source
+    # Create the Python interpolated 2 qubit C++ Bell state source
     Bell_source = f"""
     #include <clang/Quantum/quintrinsics.h>
 
@@ -89,26 +87,26 @@ a common and familiar quantum computing example.
 
     // Our Bell state Quantum Kernel
     quantum_kernel void bell()
-    {
+    {{
         H(q[0]);
         CNOT(q[0], q[1]);
         MeasZ(q[0], c[0]);
         MeasZ(q[1], c[1]);
-    }
+    }}
     """
 
-    # Create the Intel Quantum SDK source file bell.cpp
+    # Create the Intel® Quantum SDK source file bell.cpp
     with open("bell.cpp", "w", encoding="utf-8") as output_file:
         for line in Bell_source:
             print(line, file=output_file)
 
-    # Generate the Intel Quantum SDK shared object file bell.so
+    # Generate the Intel® Quantum SDK shared object file bell.so
     iqsdk.compileProgram(compiler, "bell.cpp", "-s")
 
-    # Expose and label the Intel Quantum SDK shared object as "my_bell"
+    # Expose and label the Intel® Quantum SDK shared object as "my_bell"
     iqsdk.loadSdk("bell.so", "my_bell")
 
-    # Setup the Intel Quantum Simulator to execute the quantum kernel
+    # Setup the Intel® Quantum Simulator to execute the quantum kernel
     iqs_config = iqsdk.IqsConfig()
     iqs_config.num_qubits = num_qubits
     iqs_config.simulation_type = "noiseless"
@@ -118,7 +116,7 @@ a common and familiar quantum computing example.
     # Invoke the quantum_kernel "bell" defined in the C++ source above
     iqsdk.callCppFunction("bell", "my_bell")
 
-    # Establish references to the quntum kernel qubits
+    # Establish references to the quantum kernel qubits
     qbit_ref = iqsdk.RefVec()
     for i in range(num_qubits):
         qbit_ref.append( iqsdk.QbitRef("q", i, "my_bell").get_ref() )
@@ -130,7 +128,6 @@ a common and familiar quantum computing example.
     # Printing probability register of size 4
     # |00>    : 0                             |10>    : 0
     # |01>    : 0                             |11>    : 1
-
 
 .. raw:: html
 
@@ -162,12 +159,11 @@ This environment path can also be found from the qBraid CLI via
 
         ``export PATH=$PATH:/opt/.qbraid/environments/intel_dk7c2g``
 
-
 OpenQASM Support
-------------------
+----------------
 
 Intel® Quantum SDK provides a source-to-source converter which takes OpenQASM
-code and converts it into C++ for use with the Intel(R) Quantum SDK. This
+code and converts it into C++ for use with the Intel® Quantum SDK. This
 converter requires Python >= 3.10. Currently, it only processes OpenQASM 2.0
 compliant code as described by the Open Quantum Assembly Language paper:
 `arXiv:1707.03429 <https://arxiv.org/abs/1707.03429>`_.
@@ -187,7 +183,7 @@ two sections there identified by comments starting with "Create " and re-run;
 
 .. code-block:: python
 
-    # Create the Python parameterized 2 qubit OpenQASM Bell state source
+    # Create the Python interpolated 2 qubit OpenQASM Bell state source
     Bell_source = f"""
     OPENQASM 2.0;
     include "qelib1.inc";
@@ -204,7 +200,7 @@ two sections there identified by comments starting with "Create " and re-run;
         for line in Bell_source:
             print(line, file=output_file)
 
-    # Create the Intel Quantum SDK source file bell.cpp
+    # Create the Intel® Quantum SDK source file bell.cpp
     iqsdk.compileProgram(compiler, "bell.qasm", "-B")
 
 As a further alternative to a OpenQASM file or an inline OpenQASM source, it is also
@@ -222,4 +218,4 @@ possible to start from a Qiskit quantum algorithm and transpile to OpenQASM:
 
     Bell_source = circuit.qasm()
 
-Enjoy exploring the possibilities of quantum computing.
+Enjoy exploring the possibilities of quantum computing with the Intel® Quantum SDK.
