@@ -5,33 +5,134 @@
 Intel® Quantum SDK
 ====================
 
-Intel Quantum SDK is a C++ based API that allows users to write software targeted for Intel quantum hardware. It is available as a pre-installed
+Intel® Quantum SDK is a C++ based API that allows users to write software
+targeted for Intel quantum hardware. It is available as a pre-installed
 environment on qBraid Lab, and is free to access for all users:
 
 .. image:: ../_static/cpp/cpp_intel.png
     :align: center
     :width: 90%
-    :alt: Intel Quantum SDK
+    :alt: Intel® Quantum SDK
     :target: javascript:void(0);
 
 |
 
-OpenQASM Support
+To cite the Intel® Quantum SDK, please reference:
+
+    Khalate, P., Wu, X.-C., Premaratne, S., Hogaboam, J., Holmes, A., Schmitz, A.,
+    Guerreschi, G. G., Zou, X. & Matsuura, A. Y.,
+    `arXiv:2202.11142 (2022). <https://doi.org/10.48550/arXiv.2202.11142>`_
+
+The Intel® Quantum SDK is designed to interoperate with Python software
+environments and we will use that feature in your first notebook.
+
+Python Interface
 ------------------
 
-Intel(R) Quantum SDK provides a source-to-source converter which takes OpenQASM code and converts it into C++ for use with the Intel(R) Quantum SDK. This converter requires Python >= 3.7. Currently, it only processes OpenQASM 2.0 compliant code as described by the Open Quantum Assembly Language paper: `arXiv:1707.03429 <https://arxiv.org/abs/1707.03429>`_.
+The Intel® Quantum SDK Python Interface provides an API to run quantum algorithms using
+Python 3, through the **intelqsdk.cbindings** library. The standard approach
+to using the Intel® Quantum SDK is to provide a ``quantum_kernel`` as C++ source
+in your Python environment and then expose that kernel for operation. A second approach
+for interacting with Python is via the Intel® Quantum Compiler OpenQASM Bridge:
 
-To translate the OpenQASM file to C++ file, you can run the compiler script with -B flag to generate the corresponding ``quantum_kernel`` functions in C++ format.
+1. Write ``quantum_kernel`` functions in C++, compile to a ``.so`` shared object file, setup
+   the Intel® Quantum Simulator and call the ``intelqsdk.cbindings`` APIs from Python.
 
-.. code-block:: bash
-
-    $ ./intel-quantum-compiler -B example.qasm
+2. Write quantum circuits in OpenQASM 2.0, convert that to a ``quantum_kernel`` source in C++,
+   and use the ``intelqsdk.cbindings`` library as before, all from within Python.
 
 .. raw:: html
 
-    <h3 style="color:#D30982;">qBraid Instructions</h3> 
+    <h3 style="color:#D30982;">qBraid Specific Instructions</h3>
 
-On qBraid, the compiler is located in the Intel environment directory.
+The Python interface is installed in the Intel® Quantum SDK environment
+in qBraid. Before running this notebook, make sure that you have activated
+the Intel® Quantum SDK environment, and have selected the ``Python [IQSDK]``
+kernel in the top-right of your menu bar. To run your Python
+scripts using the **intelqsdk.cbindings** library, you can use the qBraid CLI
+
+.. code-block:: bash
+
+    $ qbraid envs activate intel
+
+or call your script with the full python3 path at
+
+.. code-block:: bash
+
+    $ /opt/.qbraid/environments/intel_dk7c2g/pyenv/bin/python3
+
+
+Your First C++ Quantum Kernel
+-----------------------------
+
+We will create and manipulate a ``quantum_kernel`` running on the Intel® Quantum Simulator
+directly in your notebook. This first kernel will demonstrate a simple quantum Bell state as
+a common and familiar quantum computing example.
+
+.. code-block:: python
+
+    import intelqsdk.cbindings as iqsdk
+
+    compiler = "/opt/.qbraid/environments/intel_dk7c2g/intel-quantum-compiler"
+
+    num_qubits = 2
+
+    # Create the Python interpolated 2 qubit C++ Bell state source
+    Bell_source = f"""
+    #include <clang/Quantum/quintrinsics.h>
+
+    // Establish the classical and quantum kernel variables
+    cbit c[{num_qubits}];
+    qbit q[{num_qubits}];
+
+    // Our Bell state Quantum Kernel
+    quantum_kernel void bell()
+    {{
+        H(q[0]);
+        CNOT(q[0], q[1]);
+        MeasZ(q[0], c[0]);
+        MeasZ(q[1], c[1]);
+    }}
+    """
+
+    # Create the Intel® Quantum SDK source file bell.cpp
+    with open("bell.cpp", "w", encoding="utf-8") as output_file:
+        print(Bell_source, file=output_file)
+
+    # Generate the Intel® Quantum SDK shared object file bell.so
+    iqsdk.compileProgram(compiler, "bell.cpp", "-s")
+
+    # Expose and label the Intel® Quantum SDK shared object as "my_bell"
+    iqsdk.loadSdk("bell.so", "my_bell")
+
+    # Setup the Intel® Quantum Simulator to execute the quantum kernel
+    iqs_config = iqsdk.IqsConfig()
+    iqs_config.num_qubits = num_qubits
+    iqs_config.simulation_type = "noiseless"
+    iqs_device = iqsdk.FullStateSimulator(iqs_config)
+    iqs_device.ready()
+
+    # Invoke the quantum_kernel "bell" defined in the C++ source above
+    iqsdk.callCppFunction("bell", "my_bell")
+
+    # Establish references to the quantum kernel qubits
+    qbit_ref = iqsdk.RefVec()
+    for i in range(num_qubits):
+        qbit_ref.append( iqsdk.QbitRef("q", i, "my_bell").get_ref() )
+
+    # Print the probabilities of the quantum system
+    probabilities = iqs_device.getProbabilities(qbit_ref)
+    iqsdk.FullStateSimulator.displayProbabilities(probabilities, qbit_ref)
+
+    # Printing probability register of size 4
+    # |00>    : 0                             |10>    : 0
+    # |01>    : 0                             |11>    : 1
+
+.. raw:: html
+
+    <h3 style="color:#D30982;">qBraid Specific Information</h3>
+
+On qBraid, the Intel® Quantum Compiler is located in the ``intel`` environment directory.
 
 .. code-block:: bash
 
@@ -48,126 +149,71 @@ This environment path can also be found from the qBraid CLI via
     intel                          /opt/.qbraid/environments/intel_dk7c2g
     ...
 
+.. note::
 
-Python Interface
-------------------
+    For convenience when working with the terminal CLI, consider appending the Intel®
+    Quantum Compiler path to your shell's environment:
 
-The Python Interface provides users a way to run the Intel(R) Quantum SDK using Python 3, through the **iqsdk** library. There are two modes for interacting with Python:
+    .. code-block:: bash
 
-1. Write quantum circuits in OpenQASM 2.0 -- write a quantum circuit to a file, and convert that to a ``.cpp`` file that has ``quantum_kernel`` functions, compile, and use the ``iqsdk`` library to run the ``quantum_kernel`` functions and call APIs, all from within Python.
+        export PATH=$PATH:/opt/.qbraid/environments/intel_dk7c2g
 
-2. Write ``quantum_kernel`` functions in C++, compile to a ``.so`` file, and call APIs from Python.
+OpenQASM Support
+----------------
 
-.. raw:: html
+Intel® Quantum SDK provides a source-to-source converter which takes OpenQASM
+code and converts it into C++ for use with the Intel® Quantum SDK. This
+converter requires Python >= 3.10. Currently, it only processes OpenQASM 2.0
+compliant code as described by the Open Quantum Assembly Language paper:
+`arXiv:1707.03429 <https://arxiv.org/abs/1707.03429>`_.
 
-    <h3 style="color:#D30982;">qBraid Instructions</h3> 
-
-The Python interface is installed in the Intel(R) Quantum SDK environment in qBraid. Before running this notebook, make sure that you have activated the Intel(R) Quantum SDK environment, and have selected the ``Python [IQSDK]`` kernel in the top-right of your menu bar. To run your Python scripts using the **iqsdk** library, you can use the qBraid CLI
+To translate an OpenQASM source to a C++ file, you can run the Intel® Quantum Compiler with
+the -B flag to generate the corresponding ``quantum_kernel`` functions in C++ source
+format. If you are working from the terminal CLI with a pre-existing OpenQASM file simply use the
+following syntax to create your C++ ``quantum_kernel`` source file:
 
 .. code-block:: bash
 
-    $ qbraid envs activate intel
+    $ intel-quantum-compiler -B example.qasm
 
-or call your script with the full python3 path at
 
-.. code-block:: bash
+Working with inline OpenQASM content insert the following code into the above notebook, replacing the
+two sections there identified by comments starting with "Create " and re-run;
 
-    $ /opt/.qbraid/environments/intel_dk7c2g/pyenv/bin/python3
+.. code-block:: python
 
-Python via OpenQASM
-^^^^^^^^^^^^^^^^^^^^
+    # Create the Python interpolated 2 qubit OpenQASM Bell state source
+    Bell_source = f"""
+    OPENQASM 2.0;
+    include "qelib1.inc";
+    qreg q[{num_qubits}];
+    creg c[{num_qubits}];
+    h q[0];
+    cx q[0],q[1];
+    measure q[0] -> c[0];
+    measure q[1] -> c[1];
+    """
 
-**Step 1:** Write quantum programs in OpenQASM2.0 or alternatively, transpile your python program into OpenQASM 2.0
+    # Create the OpenQASM 2.0 source file bell.qasm
+    with open("bell.qasm", "w", encoding="utf-8") as output_file:
+        print(Bell_source, file=output_file)
 
-You can use your choice of quantum programming package to write your program. As long as the program can be turned into a qasm file, the Bridge library will be able to translate it to a C++ source file for the SDK.
+    # Create the Intel® Quantum SDK source file bell.cpp
+    iqsdk.compileProgram(compiler, "bell.qasm", "-B")
 
-**Step 2:** Write your Python script
-
-First, we will construct a circuit using Qiskit, and convert it to an OpenQASM string:
+As a further alternative to a OpenQASM file or an inline OpenQASM source, it is also
+possible to start from a Qiskit quantum algorithm and transpile to OpenQASM:
 
 .. code-block:: python
 
     from qiskit import QuantumCircuit
 
-    # Create bell circuit with measurement over both qubits
+    # Create Qiskit bell circuit with measurement over both qubits
     circuit = QuantumCircuit(2, 2)
     circuit.h(0)
     circuit.cx(0, 1)
     circuit.measure([0, 1], [0, 1])
 
-    input_qasm = circuit.qasm()
+    Bell_source = circuit.qasm()
 
-We could have also read directly from a local ``.qasm`` file:
-
-.. code-block:: python
-
-    with open("example.qasm", "r", encoding="utf-8") as input_file:
-        input_qasm: str = input_file.read()
-
-
-Either way, we now have an example OpenQASM string that looks as follows:
-
-.. code-block:: python
-
-    >>> print(input_qasm)
-    OPENQASM 2.0;
-    include "qelib1.inc";
-    qreg q[2];
-    creg c[2];
-    h q[0];
-    cx q[0],q[1];
-    measure q[0] -> c[0];
-    measure q[1] -> c[1];
-
-
-Next, we will use Bridge to translate the OpenQASM file to C++,
-
-.. code-block:: python
-
-    from openqasm_bridge.v2 import translate
-
-    kernel = circuit.name # assuming generated from qiskit
-
-    translated: list[str] = translate(input_qasm, kernel_name=kernel)
-
-    with open("example.cpp", "w", encoding="utf-8") as output_file:
-        for line in translated:
-            print(line, file=output_file)
-
-
-and compile the translated C++ code using the qBraid Intel Quantum SDK environment compiler path:
-
-.. code-block:: python
-
-    import iqsdk
-
-    compiler_path = "/opt/.qbraid/environments/intel_dk7c2g/intel-quantum-compiler"
-
-    iqsdk.compileProgram(compiler_path, "example.cpp", "-s")
-    # Generates output IR file example.ll and quantum object file example.so
-
-From here, we can start calling APIs to set up the simulator and run the quantum program. For example:
-
-.. code-block:: python
-
-    num_qubits = circuit.num_qubits # assuming generated from qiskit
-
-    iqs_config = iqsdk.IqsConfig()
-    iqs_config.num_qubits = num_qubits
-    iqs_config.simulation_type = "noiseless"
-
-    iqs_device = iqsdk.FullStateSimulator(iqs_config)
-    iqs_device.ready()
-
-    iqsdk.callCppFunction(kernel)
-
-    qbit_ref = iqsdk.RefVec()
-
-    for i in range(num_qubits):
-        qbit_ref.append(iqsdk.QbitRef("q", i).get_ref())
-
-    probabilities = iqs_device.getProbabilities(qbit_ref)
-    iqsdk.FullStateSimulator.displayProbabilities(probabilities, qbit_ref)
-    # Printing probability register of size 4
-    # |00>    : 0                             |10>    : 0
-    # |01>    : 0                             |11>    : 1
+Enjoy exploring the possibilities of quantum computing with the Intel® Quantum SDK.
