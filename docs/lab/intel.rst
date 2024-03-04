@@ -59,7 +59,7 @@ or call your script with the full python3 path at
 
 .. code-block:: bash
 
-    $ /opt/.qbraid/environments/intel_dk7c2g/virtualenv/bin/python3
+    $ /opt/.qbraid/environments/intel_dk7c2g/pyenv/bin/python3
 
 
 Your First C++ Quantum Kernel
