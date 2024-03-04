@@ -9,7 +9,7 @@ Intel® Quantum SDK is a C++ based API that allows users to write software
 targeted for Intel quantum hardware. It is available as a pre-installed
 environment on qBraid Lab, and is free to access for all users:
 
-.. image:: ../_static/cpp/UPDATE_ME_PLEASE.png
+.. image:: ../_static/cpp/cpp_intel.png
     :align: center
     :width: 90%
     :alt: Intel® Quantum SDK
@@ -19,9 +19,9 @@ environment on qBraid Lab, and is free to access for all users:
 
 To cite the Intel® Quantum SDK, please reference:
 
-Khalate, P., Wu, X.-C., Premaratne, S., Hogaboam, J., Holmes, A., Schmitz, A.,
-Guerreschi, G. G., Zou, X. & Matsuura, A. Y.,
-`arXiv:2202.11142 (2022). <https://doi.org/10.48550/arXiv.2202.11142>`_
+    Khalate, P., Wu, X.-C., Premaratne, S., Hogaboam, J., Holmes, A., Schmitz, A.,
+    Guerreschi, G. G., Zou, X. & Matsuura, A. Y.,
+    `arXiv:2202.11142 (2022). <https://doi.org/10.48550/arXiv.2202.11142>`_
 
 The Intel® Quantum SDK is designed to interoperate with Python software
 environments and we will use that feature in your first notebook.
@@ -154,9 +154,9 @@ This environment path can also be found from the qBraid CLI via
     For convenience when working with the terminal CLI, consider appending the Intel®
     Quantum Compiler path to your shell's environment:
 
-    ..
+    .. code-block:: bash
 
-        ``export PATH=$PATH:/opt/.qbraid/environments/intel_dk7c2g``
+        export PATH=$PATH:/opt/.qbraid/environments/intel_dk7c2g
 
 OpenQASM Support
 ----------------
