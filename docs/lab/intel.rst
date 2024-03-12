@@ -149,6 +149,8 @@ This environment path can also be found from the qBraid CLI via
     intel                          /opt/.qbraid/environments/intel_dk7c2g
     ...
 
+The Intel® `oneAPI <https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html>`_ toolkit also comes pre-installed, and can be accessed at ``/opt/intel/oneapi``.
+
 .. note::
 
     For convenience when working with the terminal CLI, consider appending the Intel®
