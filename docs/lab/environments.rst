@@ -103,7 +103,7 @@ Create environment
     :alt: Create custom environment
     :target: javascript:void(0);
 
-\1. In the Environment Manager sidebar, click **Add**, then click **New Environment**.
+\1. In the Environment Manager sidebar, click **Add**, then click **Create Environment**.
 
 \2. Give your custom environment a name, description, add tags, upload a logo,
 and specify any packages to install using a ``requirements.txt`` format.
@@ -207,6 +207,8 @@ the desired package(s) within the current kernel:
 
     %pip install [pkgs]
 
+
+After installing any new packages directly from a notebook, you *must* restart the kernel to see the changes take effect.
 
 .. seealso::
     
