@@ -103,7 +103,7 @@ a common and familiar quantum computing example.
     iqsdk.compileProgram(compiler, "bell.cpp", "-s")
 
     # Expose and label the Intel® Quantum SDK shared object as "my_bell"
-    iqsdk.loadSdk("bell.so", "my_bell")
+    iqsdk.loadSdk("./bell.so", "my_bell")
 
     # Setup the Intel® Quantum Simulator to execute the quantum kernel
     iqs_config = iqsdk.IqsConfig()
@@ -151,14 +151,6 @@ This environment path can also be found from the qBraid CLI via
 
 The Intel® `oneAPI <https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html>`_ toolkit also comes pre-installed, and can be accessed at ``/opt/intel/oneapi``.
 
-.. note::
-
-    For convenience when working with the terminal CLI, consider appending the Intel®
-    Quantum Compiler path to your shell's environment:
-
-    .. code-block:: bash
-
-        export PATH=$PATH:/opt/.qbraid/environments/intel_dk7c2g
 
 OpenQASM Support
 ----------------
@@ -187,7 +179,6 @@ two sections there identified by comments starting with "Create " and re-run;
     # Create the Python interpolated 2 qubit OpenQASM Bell state source
     Bell_source = f"""
     OPENQASM 2.0;
-    include "qelib1.inc";
     qreg q[{num_qubits}];
     creg c[{num_qubits}];
     h q[0];
