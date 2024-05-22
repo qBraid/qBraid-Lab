@@ -14,13 +14,13 @@ With the recent sunsetting of the IBM Quantum Lab, IBM Quantum has identified se
 
    All data will be deleted from IBM Quantum Lab servers on 15 November, 2024. Make sure that you download everything by then; you can reupload your projects onto qBraid Lab.
 
-Part 1
---------
+Step 1: Download
+-------------------
 
 To start the migration process, you will need to download your files from IBM Quantum Lab.
 
-1. Visit IBM Quantum Lab and log in.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+1a. Visit IBM Quantum Lab and log in.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Go to the `IBM Quantum Lab <https://quantum.ibm.com/lab>`_. Upon landing, it will prompt you to enter your IBMid and password.
 
@@ -29,7 +29,7 @@ Go to the `IBM Quantum Lab <https://quantum.ibm.com/lab>`_. Upon landing, it wil
     :alt: IBM Quantum Lab
     :target: javascript:void(0);
 
-2. Download your relevant files.
+1b. Download your relevant files.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Click the blue button labeled "Download data (.zip)". This will download a .zip file containing all of your projects and expand it in your Downloads folder.
@@ -44,12 +44,12 @@ Click the blue button labeled "Download data (.zip)". This will download a .zip 
     :alt: IBM Files
     :target: javascript:void(0);
 
-Part 2
---------
+Step 2: Launch
+-----------------
 
 After downloading your files, you can now migrate to qBraid Lab.
 
-3. Visit `qbraid.com <https://www.qbraid.com>`_ to open qBraid Lab.
+2a. Visit `qbraid.com <https://www.qbraid.com>`_ to open qBraid Lab.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When you're at the landing page, click the `"Start Now" button <https://account.qbraid.com/>`_ in the top-right corner in order to gain access to the qBraid Lab.
@@ -59,7 +59,7 @@ When you're at the landing page, click the `"Start Now" button <https://account.
     :alt: qBraid Landing Page
     :target: javascript:void(0);
 
-4. Create your free qBraid account.
+2b. Create your free qBraid account.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can create your account by entering your email address and password, or you can sign up with Google. Creating a qBraid account is always free!
@@ -72,12 +72,7 @@ You can create your account by entering your email address and password, or you 
 .. seealso::
     - `qBraid Accounts <account.html>`_
 
-Part 3
---------
-
-When your account is made, you can upload your files to qBraid Lab.
-
-5. Initialize qBraid Lab from the landing page.
+2c. Initialize qBraid Lab from the landing page.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When you have logged in, you will see your account page. Click the purple `"Launch Lab" button <https://lab.qbraid.com>`_ in order to open the qBraid Lab interface.
@@ -87,7 +82,12 @@ When you have logged in, you will see your account page. Click the purple `"Laun
     :alt: qBraid Lab
     :target: javascript:void(0);
 
-6. Click on the "Files" icon.
+Step 3: Upload
+----------------
+
+When your account is made, you can upload your files to qBraid Lab.
+
+3a. Click on the "Files" icon.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The qBraid Lab server may take up to 5 minutes to initialize the first time. When you are in, you should see a page that looks like this:
@@ -99,7 +99,7 @@ The qBraid Lab server may take up to 5 minutes to initialize the first time. Whe
 
 Click on the "Files" icon in the right panel to open the file manager.
 
-7. Click "Upload Files" and select the expanded files from IBM Quantum Lab.
+3b. Click "Upload Files" and select the expanded files from IBM Quantum Lab.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Your .zip folder should be in your Downloads folder. After expanding, select all the files and hit "Open".
@@ -124,12 +124,12 @@ You can see now that all of the files that you were working on in the IBM Quantu
 .. seealso::
     - `Notebooks on qBraid <notebooks.html>`_
 
-Part 4
---------
+Step 4: Execute
+------------------
 
 After all your files are uploaded, you can choose the environment you'd like to run them in. qBraid has a premium pre-installed Python environment with 135 relevant packages available. There are also customizable Qiskit environments to support the version that your code is written in.
 
-8. Click on the Environments icon in the right panel.
+4a. Click on the Environments icon in the right panel.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The qBraid environment is pre-selected, but you have the option to change this.
@@ -145,7 +145,7 @@ The qBraid environment is pre-selected, but you have the option to change this.
     :target: javascript:void(0);
 
 
-9. Configure your environment with any version of Qiskit you need.
+4b. Configure your environment with any version of Qiskit you need.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By searching for "Qiskit" in the Environments tab, you can select the version you need. If you need a version that is not available, you can create a custom environment by clicking "Create Environment".
