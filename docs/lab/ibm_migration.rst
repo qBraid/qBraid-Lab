@@ -39,8 +39,6 @@ Click the blue button labeled "Download data (.zip)". This will download a .zip 
     :alt: Download data
     :target: javascript:void(0);
 
-|
-
 .. image:: ../_static/ibm_quantum_lab_migration/3-IBM-Files-Display.png
     :width: 50%
     :alt: IBM Files
@@ -54,7 +52,7 @@ After downloading your files, you can now migrate to qBraid Lab.
 3. Visit `qbraid.com <https://www.qbraid.com>`_ to open qBraid Lab.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When you're at the landing page, click the "Start Now" button in the top-right corner in order to gain access to the qBraid Lab.
+When you're at the landing page, click the `"Start Now" button <https://account.qbraid.com/>`_ in the top-right corner in order to gain access to the qBraid Lab.
 
 .. image:: ../_static/ibm_quantum_lab_migration/4-qBraid-Landing.png
     :width: 80%
@@ -71,6 +69,9 @@ You can create your account by entering your email address and password, or you 
     :alt: qBraid Sign Up
     :target: javascript:void(0);
 
+.. seealso::
+    - `qBraid Accounts <account.html>`_
+
 Part 3
 --------
 
@@ -79,7 +80,7 @@ When your account is made, you can upload your files to qBraid Lab.
 5. Initialize qBraid Lab from the landing page.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When you have logged in, you will see your account page. Click the purple "Launch Lab" button in order to open the qBraid Lab interface.
+When you have logged in, you will see your account page. Click the purple `"Launch Lab" button <https://lab.qbraid.com>`_ in order to open the qBraid Lab interface.
 
 .. image:: ../_static/ibm_quantum_lab_migration/6-qBraid-Lab-Landing.png
     :width: 80%
@@ -120,6 +121,9 @@ Your .zip folder should be in your Downloads folder. After expanding, select all
 
 You can see now that all of the files that you were working on in the IBM Quantum Lab are now saved in your workspace in the qBraid Lab.
 
+.. seealso::
+    - `Notebooks on qBraid <notebooks.html>`_
+
 Part 4
 --------
 
@@ -146,12 +150,15 @@ The qBraid environment is pre-selected, but you have the option to change this.
 
 By searching for "Qiskit" in the Environments tab, you can select the version you need. If you need a version that is not available, you can create a custom environment by clicking "Create Environment".
 
-.. .. image:: ../_static/ibm_quantum_lab_migration/13-qBraid-Lab-All-Qiskit.png
-..     :width: 80%
-..     :alt: Qiskit versions
-..     :target: javascript:void(0);
+.. image:: ../_static/ibm_quantum_lab_migration/13-qBraid-Lab-All-Qiskit.png
+     :width: 20%
+     :alt: Qiskit versions
+     :target: javascript:void(0);
 
-.. |
+.. seealso::
+    - `qBraid Environments <environments.html>`_
+    - `qBraid Kernels <kernels.html>`_
+
 
 Conclusion
 -------------
