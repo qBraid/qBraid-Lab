@@ -113,3 +113,4 @@ Documentation
    lab/system
    lab/troubleshoot
    lab/pricing
+   lab/ibm_migration
