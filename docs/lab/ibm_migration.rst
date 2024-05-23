@@ -75,11 +75,16 @@ You can create your account by entering your email address and password, or you 
 2c. Initialize qBraid Lab from the landing page.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When you have logged in, you will see your account page. Click the purple `"Launch Lab" button <https://lab.qbraid.com>`_ in order to open the qBraid Lab interface.
+When you have logged in, you will see your account page. Click the purple `"Launch Lab" button <https://lab.qbraid.com>`_ in order to open the qBraid Lab interface. This will open the qBraid Lab page, from where you can select the first "Free" version to get started.
 
 .. image:: ../_static/ibm_quantum_lab_migration/6-qBraid-Lab-Landing.png
     :width: 80%
     :alt: qBraid Lab
+    :target: javascript:void(0);
+
+.. image:: ../_static/ibm_quantum_lab_migration/doc-update-1.png
+    :width: 80%
+    :alt: qBraid Lab Intermediate
     :target: javascript:void(0);
 
 Step 3: Upload
@@ -92,34 +97,36 @@ When your account is made, you can upload your files to qBraid Lab.
 
 The qBraid Lab server may take up to 5 minutes to initialize the first time. When you are in, you should see a page that looks like this:
 
-.. image:: ../_static/ibm_quantum_lab_migration/7-qBraid-Lab-Files.png
+.. image:: ../_static/ibm_quantum_lab_migration/doc-update-2.png
     :width: 80%
     :alt: Files icon
     :target: javascript:void(0);
 
-Click on the "Files" icon in the right panel to open the file manager.
+Navigate to the "Files" icon in the left panel to access the file manager. You should see a folder titled "qbraid-tutorials".
 
-3b. Click "Upload Files" and select the expanded files from IBM Quantum Lab.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3b. Upload the files onto qBraid Lab.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Your .zip folder should be in your Downloads folder. After expanding, select all the files and hit "Open".
+To upload files, click the "Upload" icon in the file manager.
 
-.. image:: ../_static/ibm_quantum_lab_migration/8-qBraid-Lab-Upload.png
+.. image:: ../_static/ibm_quantum_lab_migration/doc-update-3.png
     :width: 80%
     :alt: Upload files
     :target: javascript:void(0);
 
-.. image:: ../_static/ibm_quantum_lab_migration/9-qBraid-Lab-Explorer.png
+Your .zip folder containing your files from IBM Quantum Lab should be in your Downloads folder. After expanding, select all the files and hit "Open".
+
+.. image:: ../_static/ibm_quantum_lab_migration/doc-update-4.png
       :width: 80%
       :alt: Select files
       :target: javascript:void(0);
 
-.. image:: ../_static/ibm_quantum_lab_migration/10-qBraid-Lab-AllIn.png
+You can see now that all of the files that you were working on in the IBM Quantum Lab are now saved in your workspace in the qBraid Lab.
+
+.. image:: ../_static/ibm_quantum_lab_migration/doc-update-5.png
       :width: 80%
       :alt: All files uploaded
       :target: javascript:void(0);
-
-You can see now that all of the files that you were working on in the IBM Quantum Lab are now saved in your workspace in the qBraid Lab.
 
 .. seealso::
     - `Notebooks on qBraid <notebooks.html>`_
@@ -129,15 +136,10 @@ Step 4: Execute
 
 After all your files are uploaded, you can choose the environment you'd like to run them in. qBraid has a premium pre-installed Python environment with 135 relevant packages available. There are also customizable Qiskit environments to support the version that your code is written in.
 
-4a. Click on the Environments icon in the right panel.
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+4a. Navigate to the Environments icon in the right panel.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The qBraid environment is pre-selected, but you have the option to change this.
-
-.. image:: ../_static/ibm_quantum_lab_migration/11-qBraid-Lab-Sample-Enviro.png
-    :width: 80%
-    :alt: Environments icon
-    :target: javascript:void(0);
 
 .. image:: ../_static/ibm_quantum_lab_migration/12-qBraid-Lab-Enviro-Expand.png
     :width: 80%
