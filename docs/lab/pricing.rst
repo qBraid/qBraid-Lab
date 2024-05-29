@@ -49,9 +49,13 @@ Note that the use of error mitigation on IonQ's Aria QPU requires a minimum of 2
      - 30 credits
      - 1 credit
    * - Rigetti
-     - Aspen-M
+     - Aspen-M-3
      - 30 credits
      - 0.035 credits
+   * - IQM
+     - Garnet
+     - 30 credits
+     - 0.145 credits
 
 
 Quantum Circuit Simulators
