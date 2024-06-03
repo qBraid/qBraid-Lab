@@ -114,3 +114,4 @@ Documentation
    lab/troubleshoot
    lab/pricing
    lab/ibm_migration
+   lab/course_builder
