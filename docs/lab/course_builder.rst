@@ -1,6 +1,6 @@
 .. _course_builder:
 
-qBraid Course Builder
+Course Builder
 =====================
 
 Guide for educators to create and publish quantum computing (or any) courses on qBraid.
@@ -25,7 +25,7 @@ You can find the qBraid Accounts Dashboard at `accounts.qbraid.com <https://acco
 
 Once you're there, you can click on the "Organization" tab to view the organizations you are a part of or to create a new organization.
 
-.. image:: ../_static/course-builder/1-course-builder.png
+.. image:: ../_static/course_builder/1-course-builder.png
     :width: 80%
     :alt: Organization Page
     :target: javascript:void(0);
@@ -37,21 +37,21 @@ If you already have an organization, you can skip till Step 2. Otherwise, contin
 
 To create a new organization, either click the "Add an organization" button or the "Create an organization" button.
 
-.. image:: ../_static/course-builder/2-course-builder.png
+.. image:: ../_static/course_builder/2-course-builder.png
     :width: 80%
     :alt: Organization Create
     :target: javascript:void(0);
 
 In the pop-up dialog that appears, change the name of the organization and add a description.
 
-.. image:: ../_static/course-builder/3-course-builder.png
+.. image:: ../_static/course_builder/3-course-builder.png
     :width: 80%
     :alt: Organization Create Dialog
     :target: javascript:void(0);
 
 After you've filled in the details, add users to the organization. In order for students to join your class, they should first be added to the organization. Then, click "Add Organization".
 
-.. image:: ../_static/course-builder/4-course-builder.png
+.. image:: ../_static/course_builder/4-course-builder.png
     :width: 80%
     :alt: Organization Create Dialog
     :target: javascript:void(0);
@@ -78,7 +78,7 @@ Visit `lab.qbraid.com <https://lab.qbraid.com>`_ and log in with your qBraid acc
 
 From the Launcher tab, click on the "Course Builder" icon.
 
-.. image:: ../_static/course-builder/6-course-builder.png
+.. image:: ../_static/course_builder/6-course-builder.png
     :width: 80%
     :alt: Course Builder Icon
     :target: javascript:void(0);
@@ -96,7 +96,7 @@ Now you can start by creating a new course. On the page that appears, click on t
 Here, you can add your course title and description. You can select your desired visibility from the first drop-down. From the second drop-down, you can select the domain you want to host your course on. In the example, we are creating a private course on the qBraid domain. 
 
 
-.. image:: ../_static/course-builder/9-course-builder.png
+.. image:: ../_static/course_builder/9-course-builder.png
     :width: 80%
     :alt: Course Title and Description
     :target: javascript:void(0);
@@ -116,19 +116,19 @@ qBraid courses are organized into chapters. Each chapter is a Jupyter notebook w
 
 Start by clicking the "Add Chapter" button. Select the notebook you desire. In this example, we use the "Grover's Algorithm" notebook from IBM Quantum.
 
-.. image:: ../_static/course-builder/10-course-builder.png
+.. image:: ../_static/course_builder/10-course-builder.png
     :width: 80%
     :alt: Add New Chapter
     :target: javascript:void(0);
 
-.. image:: ../_static/course-builder/11-course-builder.png
+.. image:: ../_static/course_builder/11-course-builder.png
     :width: 80%
     :alt: Add New Chapter
     :target: javascript:void(0);
 
 After that, you can attach your chapter. Add as many chapters as you'd like! You can add sections to your chapter by navigating to the "Add Sections panel".
 
-.. image:: ../_static/course-builder/12-course-builder.png
+.. image:: ../_static/course_builder/12-course-builder.png
     :width: 80%
     :alt: Add Sections
     :target: javascript:void(0);
@@ -140,7 +140,7 @@ We'll come back here later.
 
 When your desired chapters have been added, it's time to publish! Click on the hamburger in the top-right corner of the course builder. 
 
-.. image:: ../_static/course-builder/13-course-builder.png
+.. image:: ../_static/course_builder/13-course-builder.png
     :width: 80%
     :alt: Hamburger
     :target: javascript:void(0);
@@ -149,21 +149,21 @@ Then, click "Publish".
 
 On the page that appears, select the organization that you created, then click "Next".
 
-.. image:: ../_static/course-builder/15-course-builder.png
+.. image:: ../_static/course_builder/15-course-builder.png
     :width: 80%
     :alt: Select Organization
     :target: javascript:void(0);
 
 You can then assign roles to the users in your organization. These include "Student", "Instructor", and "TA". After you've assigned your desired roles to the users, click "Next".
 
-.. image:: ../_static/course-builder/16-course-builder.png
+.. image:: ../_static/course_builder/16-course-builder.png
     :width: 80%
     :alt: Assign Roles
     :target: javascript:void(0);
 
 Now, click on the "Class Info" button and assign your desired time duration.
 
-.. image:: ../_static/course-builder/17-course-builder.png
+.. image:: ../_static/course_builder/17-course-builder.png
     :width: 80%
     :alt: Class Info
     :target: javascript:void(0);
@@ -175,14 +175,14 @@ Finally, click "Publish" to publish your course. You can now view your course on
 
 From the landing page, click "Qbook qBraid" to see your course in action.
 
-.. image:: ../_static/course-builder/18-course-builder.png
+.. image:: ../_static/course_builder/18-course-builder.png
     :width: 80%
     :alt: Qbook qBraid
     :target: javascript:void(0);
 
 You should see your course on the qBraid platform, rendered beautifully, with text and mini-kernels for you to run your code.
 
-.. image:: ../_static/course-builder/19-course-builder.png
+.. image:: ../_static/course_builder/19-course-builder.png
     :width: 80%
     :alt: Course on qBraid
     :target: javascript:void(0);
@@ -192,7 +192,7 @@ Congratulations! You've successfully created and published a course on qBraid. Y
 Step 5: Bonus Features
 ----------------------
 
-qBraid offers a variety of features to enhance your course. You can add MCQ and FRQ to your course to test your students' knowledge. 
+qBraid offers a variety of features to enhance your course. You can add MCQ (Multiple Choice Questions) and FRQ (Free Response Questions) to your course to test your students' knowledge. 
 
 Let's go through these features!
 
@@ -201,35 +201,35 @@ Let's go through these features!
 
 Navigate back to the Course Builder. Click on the "VIEW ALL QUESTIONS" button in the top-left corner.
 
-.. image:: ../_static/course-builder/20-course-builder.png
+.. image:: ../_static/course_builder/20-course-builder.png
     :width: 80%
     :alt: View All Questions
     :target: javascript:void(0);
 
 Here, you can add a new MCQ and a new FRQ. We will demonstrate how to create an MCQ. Click on the "Add New Question" button in the top-left corner. 
 
-.. image:: ../_static/course-builder/21-course-builder.png
+.. image:: ../_static/course_builder/21-course-builder.png
     :width: 80%
     :alt: Add New Question
     :target: javascript:void(0);
 
 Start by filling out the "Custom Id" and "Question" fields. Your Custom ID will help you link questions to the notebook directly on the course that you have created.
 
-.. image:: ../_static/course-builder/22-course-builder.png
+.. image:: ../_static/course_builder/22-course-builder.png
     :width: 80%
     :alt: MCQ Question
     :target: javascript:void(0);
 
 You can add as many choices as you like. Separate each choice with an "Enter" or "Return". qBraid supports LaTeX formatting, so you can add math equations to your questions.
 
-.. image:: ../_static/course-builder/23-course-builder.png
+.. image:: ../_static/course_builder/23-course-builder.png
     :width: 80%
     :alt: MCQ Choices
     :target: javascript:void(0);
 
 When your choices are added, click the checkbox next to the correct one to validate it.
 
-.. image:: ../_static/course-builder/24-course-builder.png
+.. image:: ../_static/course_builder/24-course-builder.png
     :width: 80%
     :alt: MCQ Correct Answer
     :target: javascript:void(0);
@@ -241,35 +241,35 @@ Finally, click "Save" to save your question.
 
 Open a new file, and create a Jupyter notebook. In a cell, add the following code: `MultipleChoiceQuestion("your-custom-id")`. Replace "your-custom-id" with the custom ID you created for your MCQ.
 
-.. image:: ../_static/course-builder/25-course-builder.png
+.. image:: ../_static/course_builder/25-course-builder.png
     :width: 80%
     :alt: Embed MCQ
     :target: javascript:void(0);
 
 Go back to the Course Builder. Click the "View" button on your course. Click the downward arrow next to your chapter. Click on the "Attach" icon.
 
-.. image:: ../_static/course-builder/26-course-builder.png
+.. image:: ../_static/course_builder/26-course-builder.png
     :width: 80%
     :alt: Course Builder View
     :target: javascript:void(0);
 
 In the pop-up that appears, you can select the file you just created. Double-click to upload.
 
-.. image:: ../_static/course-builder/27-course-builder.png
+.. image:: ../_static/course_builder/27-course-builder.png
     :width: 80%
     :alt: Attach File
     :target: javascript:void(0);
 
 After your file is uploaded, click outside the box to close it. You should see your file attached to the chapter. Click the hamurger in the top-right corner and hit "Update" to ensure that the changes are saved.
 
-.. image:: ../_static/course-builder/28-course-builder.png
+.. image:: ../_static/course_builder/28-course-builder.png
     :width: 80%
     :alt: Update
     :target: javascript:void(0);
 
 Now, when you view your course on qBook, you should be able to see the question! Navigate to the chapter, click the dropdown to access the question, and answer at will.
 
-.. image:: ../_static/course-builder/29-course-builder.png
+.. image:: ../_static/course_builder/29-course-builder.png
     :width: 80%
     :alt: MCQ on qBook
     :target: javascript:void(0);
