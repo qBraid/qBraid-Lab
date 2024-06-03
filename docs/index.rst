@@ -102,7 +102,9 @@ Documentation
    lab/kernels
    lab/notebooks
    lab/quantum_devices
+   lab/pricing
    lab/quantum_jobs
+   lab/course_builder
    lab/compute_manager
    lab/code_snippets
    lab/gpu
@@ -112,6 +114,4 @@ Documentation
    lab/integrations
    lab/system
    lab/troubleshoot
-   lab/pricing
    lab/ibm_migration
-   lab/course_builder
