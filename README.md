@@ -4,6 +4,15 @@
 [![GitHub](https://img.shields.io/badge/issue_tracking-github-blue?logo=github)](https://github.com/qBraid/qBraid-Lab/issues)
 [![Discord](https://img.shields.io/discord/771898982564626445.svg?color=pink)](https://discord.gg/TPBU2sa8Et)
 
+---
+| :warning: **PLEASE NOTE:** *As of June 28, 2024 this repository has been deprecated, and is no longer in use.* |
+|:---------------------------|
+
+- The qBraid Lab User Guide can now be found at: [https://docs.qbraid.com/lab](https://docs.qbraid.com/lab)
+- To submit feature requests or file bug reports, please visit our community page: [https://github.com/qBraid/community](https://github.com/qBraid/community)
+
+---
+
 [qBraid Lab](https://lab.qbraid.com) is a web-based JupyterLab deployment providing curated software tools for
 for researchers and developers in quantum computing.
 
